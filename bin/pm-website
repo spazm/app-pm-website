@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+package fakepackage;
+#ABSTRACT: command line front end to App::PM::Website
+
+use warnings;
+use strict;
+use App::PM::Website;
+App::PM::Website->run();
