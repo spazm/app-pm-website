@@ -1,0 +1,169 @@
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" media="all" href="http://dev.perl.org/perl-styles.css"
+<link rel="Stylesheet" type="text/css" media="all" href="http://la.pm.org/headers.css"
+</head>	
+<body>
+	<center>
+	<img id="_x0000_i1025" src="http://la.pm.org/images/lalogo.gif" border="0" height="101" width="121"><a href="http://www.pm.org"><img id="_x0000_i1026" src="http://la.pm.org/images/pm.gif" border="0" height="108" width="249"></a>
+<h1 style="text-align: center;" align="center"><st1:city w:st="on"><st1:place w:st="on">Los Angeles</st1:place></st1:city> Perl Mongers</h1>
+
+<p style="text-align: center;" align="center">The Perl Users Group of the <st1:city w:st="on"><st1:place w:st="on">Los
+Angeles</st1:place></st1:city> Metropolitan
+Area</p>
+<hr width=40%>
+</center>
+
+[% IF m.show_news -%]
+<h2> News </h2>
+<dl>
+    [% IF m.open_call -%]
+        <dt><b>Open Call for Presenters</b></dt>
+        <dd> What have you done recently with Perl?  Come tell your friends and let us all learn together!</dd>
+        <br>
+    [% END %]
+	<dt><b>Linkedin Group</b>
+	<dd>Show your support for perl by joining the <a href=http://www.linkedin.com/groups?gid=2804627>Los Angeles Perl Mongers</a> and/or <a href="http://www.linkedin.com/groups?gid=40830">Perl Mongers</a> groups.
+	<dt><b>FaceBook</b>
+        <dd>Come join the newly created Los Angeles Perl Mongers <a href=http://www.facebook.com/group.php?gid=119158178096277>Facebook group</a>. We also have a Los Angeles Perl Mongers <a href=http://www.facebook.com/pages/Los-Angeles-Perl-Mongers/110460472327702>Facebook Page</a>. 
+</dl>
+[% END %]
+
+<h2>Upcoming Events</h2>
+<h3>LA.pm's next meeting</h3>
+<table>
+	<tr><td> What:  </td><td> Los Angeles Perl Mongers Meeting</td></tr>
+	<tr><td> When:  </td><td> 7-9pm</td></tr>
+	<tr><td> Date:  </td><td> [% m.event_date %]</td></tr>
+	<tr><td> Where: </td><td> The Rubicon Project HQ - 1925 S. Bundy, 90025</td></tr>
+	<tr><td> Theme: </td><td> Perl!</td></tr>
+	<tr><td> RSVP:  </td><td> Responses always appreciated.</td></tr>
+</table>
+<p> 
+
+[% IF m.presentations -%]
+    <h4>Presentations:</h4>
+    <ol>
+        [%- FOREACH talk IN m.presentations %]
+            [%- speaker = presenter.${talk.presenter} -%]
+            <li>[% speaker.name %]: <i>[% talk.title -%]</i>
+            [% IF talk.abstract -%]
+                <br>Abstract: 
+                <br>
+                [% talk.abstract %]
+            [%- END %]
+            </li>
+        [%- END %]
+    </ol>
+[% END -%]
+
+[% IF m.presentations -%]
+    <h4>About our speakers:</h4>
+    [% FOREACH talk IN m.presentations -%]
+        [%- speaker = presenter.${talk.presenter} -%]
+        [%- IF speaker.name -%]
+            [%- IF speaker.url %]
+                <a href=[% speaker.url %] >[% speaker.name %]</a>
+            [%- ELSE %]
+                [% speaker.name %]
+            [%- END -%]
+            [% speaker.description -%]
+            [% IF (speaker.cpan || speaker.github) %]
+            [%- IF speaker.cpan -%] [ <a href=http://search.cpan.org/~[% speaker.cpan %]>[%# speaker.cpan %]cpan</a> ] [% END -%]
+            [%- IF speaker.github -%] [ <a href=http://github.com/[% speaker.github %]>[%# speaker.github %]github</a> ] [% END -%]
+            [% END %]
+            <p>
+        [%- END -%]
+    [%- END -%]
+[% END %]
+
+<h4>About your host:</h4>
+<ul>
+    <li>Andrew Grangaard is a Senior Software Engineer at the Rubicon Project, and long time Perl Monk(ey).</li>
+    <li> The Rubicon Project (http://www.rubiconproject.com)
+<br>&nbsp;&nbsp; The Rubicon Project is an Advertising Technology Company headquartered in Los Angeles.  Their mission is to automate the selling and buying of online advertising.</li>
+</ul>
+<p>
+See you at 7 on [% m.event_date_pretty %]
+<p>
+<iframe marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;t=h&amp;hl=en&amp;msa=0&amp;msid=116471213422869661926.00046c93dc4ea0b8c84c2&amp;ll=34.034188,-118.457189&amp;spn=0.004425,0.008266&amp;output=embed" scrolling="no" width="425" frameborder="0" height="350"></iframe>
+<small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;t=h&amp;hl=en&amp;msa=0&amp;msid=116471213422869661926.00046c93dc4ea0b8c84c2&amp;ll=34.034188,-118.457189&amp;spn=0.004425,0.008266&amp;source=embed" style="color: rgb(0, 0, 255); text-align: left;">Rubicon Project</a> in a larger map</small>
+
+<h2>Mailing List</h2>
+
+<p style="text-align: center;" align="center">
+You can subscribe to our mailing list by sending a message 
+containing only the word 'subscribe' to<br>
+
+<tt>losangeles-pm-request<!-- yes, this is a comment -->@mail.pm.org</tt>
+<p>
+
+<h2 >Previous Talks</h2>
+<ul>
+        <li><big>2010-Jul-24 Guy Shaw: pe-cpp, c-pre-processor partial processor for source-to-soure transformation of header files.</big>
+        <li><big>2010-Jul-24 Troy Will: Losing weight with perl.</big>
+        <li><big>2010-Jun-30 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: CPAN Tools: CPANTS, RT, etc: Live coding session to report and fix a broken third-party module</big>
+        <li><big>2010-May-26 <a href=http://samy.pl>Sammy Kamkar</a> : Extremely low-level networking in perl</big>
+        <li><big>2010-May-26 Randall Schwartz : Review of noSQL data stores.</big>
+        <li><big>2010-Apr-28 <a href=http://bluefeet.net >Aran Deltac</a>: Cassandra : A highly distributed, eventually consistent, distributed, structured, key-value store.</big>
+        <li><big>2010-Apr-28 <a href=http://r.mooo.com/ >Ralf Pieper</a>: Cloud Computing use Cases </big>
+        <li><big>2010-Mar-27 <a href=http://tommystanton.com/ >Tommy Stanton</a>: "Git your home directory in sync"</big>
+        <li><big>2010-Mar-27 <a href=http://lowlevelmanager.com >Andrew Grangaard</a>: "Dist::Zilla - distribution builder; installer not included" packaging CPAN distributions using <a href=http://search.cpan.org/dist/Dist-Zilla/ >Dist::Zilla</a>.</big>
+        <li><big>2010-Feb: no meeting.</big>
+	<li><big>2010-Jan-27 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: Hadoop Streaming with Perl. Discussion of Hadoop and using Hadoop::Streaming perl module to simplify using Hadoop Streaming interface </big>
+	<br><a href="http://la.pm.org/presentations/hadoop-slides-html">Slides</a>
+	|  <a href=http://github.com/spazm/config/blob/master/hadoop/slides/slides.vroom >Slides (raw vroom format)</a>
+	| <a href=http://search.cpan.org/perldoc?Hadoop::Streaming::Mapper>Hadoop::Streaming::Mapper</a> CPAN module.
+	| <a href=http://hadoop.apache.org>Hadoop</a> general information.
+	<li><big>2010-Jan-27 <a href="http://bluefeet.net">Aran Deltac</a> presents: Concise Code.</big>
+	<br><a href=http://www.lowlevelmanager.com/2010/02/la-perl-mongers-january-recap.html > recap </a>
+
+	<li><big>2009-Dec-02 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: Vim and Perl.  A group discussion of tips and techniques.</big>
+	<br><a href="http://la.pm.org/presentations/vim-slides-html">Slides</a>
+	 | <a href="http://github.com/spazm/config">Config Files git repo</a>
+	 | <a href="http://www.lowlevelmanager.com/2009/11/perl-vim-notes.html">original notes</a>
+	    <li><big>2009-Nov-04 <a href=http://tommystanton.com/>Tommy Stanton</a>: Testing for the Win! Test::More, Test::Most and Test::Class.</big>
+	    <br><a href=http://tommystanton.com/presentations/20091104-LA.pm-Tommy_Stanton-Advanced_TDD.tar.gz>Advanced TDD.tar.gz</a> Vroom slides.</li>
+	<li><big>2009-Nov-04 Tommy Stanton: Unstructured group discussion, TDD, <a href=http://search.cpan.org/perldoc?Vroom::Vroom>Vroom</a>, Vim. </big>
+	<li><big>2009-Sep-23 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: <a href="http://www.lowlevelmanager.com/2009/09/access-jira-api-from-perl-with.html">Access JIRA API using perl with JIRA::Client</a></big>
+	<li><big>2009-Sep-23 Andrew Grangaard: <a href="http://www.lowlevelmanager.com/2009/09/care-and-feeding-of-third-party-modules.html">Care and Feeding of Third Party Perl Modules: a discussion</a></big>
+	<li><big>2009-Aug-27 John Beppu: <a href="http://github.com/beppu/stardust">Stardust</a>, a perl COMET server.</big>  
+	<a href="http://beppu.github.com/stardust/presentations/2009-08/stardust-at-la-pm.tar.gz">Slides</a></li>
+	<li><big>2009-Aug-27 <a href="http://bluefeet.net">Aran Deltac</a> presents: Destination Moose.</big></li>
+	<li><big> 2009-Jul-17 <a href="http://xant.us">David Davis</a> : Mojo and Mojolicious, a next generation perl web framework
+	</big></li>
+	<li><big> 2009-Jul-17 Mon-Chaio Lo : Interviewing (perl) programmers
+	</big></li>
+	<li><big> 2009-Jun-17 David Williams: Data Processing and Numerical Analysis in Perl.
+	</big></li>
+	<li><big> 2009-Jun-17 Matt Burns: Moose and Joose, programming is fun again.
+	</big></li>
+	<li><big>2008-Mar-18 Thomas MacNeil: Writing
+		Modules </big> 
+		<a href="/presentations/writing-modules/Nihilistic_to_AltruisticPG.ppt" target="_blank">powerpoint</a>, 
+		<a href="/presentations/writing-modules/Nihilistic_to_AltruisticPG.pdf" target="_blank">pdf</a> </li>
+	<li><big>2008-Feb-28 Richard Dice: 7 Stages of a Perl Monger and more</big></li>
+	<li><big>2008-Jan-29 Christopher Paulika: <a href="/presentations/tdd/TheRoadToTestDrivenDevelopment.ppt" target="_blank">The Road to Test Driven Development</a></big></li>
+	<li><big>2007-Nov-08 Ben Tilly: <a href="/presentations/ab-testing/" target="_blank">How
+			to do A/B Testing on Websites</a></big></li>
+	<li><big>2007-Sep-20 brian d foy: Making your own CPAN</big></li>
+	<li><big>2007-Aug-16 Randal Schwartz: an Introduction to Rose::DB::Object</big></li>
+
+</ul>
+
+<p>
+
+<h2 >Neighbor Groups</h2>
+
+      <ul type="disc">
+        <li><a href="http://thousand-oaks.pm.org">Thousand Oaks Perl Mongers</a></li>
+        <li><a href="http://oc.pm.org">Orange County Perl Mongers</a></li>
+        <li><a href="http://sandiego.pm.org">San Diego Perl Mongers</a></li>
+	</ul>
+	<hr>
+	Questions?  Join the mailing list, or contact <tt><b>losangeles-pm-admins@<!-- yes, this is another comment -->mail.pm.org</b></tt>
+<hr>
+<script language="JavaScript" src="http://www.perl.org/misc/site-sponsor-js.html"></script>
+	
+</body>
+</html>
