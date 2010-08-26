@@ -1,4 +1,7 @@
 ---
+config:
+    url : https://groups.pm.org/groups/los-angeles/
+    user: spazm
 location:
   rubicon:
     address: 1925 S. Bundy
@@ -52,6 +55,18 @@ meetings:
       - abstract: ""
         presenter: bluefeet
         title: 12 CPAN Distros in 12 penta-Minutes
+  - event_date: 'Wednesday, Sept 22, 2010'
+    event_date_pretty: Wednesday the 22th
+    open_call: 0
+    show_news: 1
+    presentations:
+      - abstract: ""
+        presenter: tstanton
+        title: App::Git::HomeSync
+      - abstract: ""
+        presenter: bluefeet
+        title: 12 CPAN Distros in 12 penta-Minutes
+        presenter:
 presenter:
   guyshaw:
     name: Guy Shaw
@@ -81,13 +96,19 @@ presenter:
   tstanton:
     cpan: tstanton
     description: ""
-    github: tstanton
+    ;github: tstanton
     name: Tommy Stanton
     url: http://tommystanton.com
   xantus:
     cpan: xantus
     description: is a software engineer who specializes in rich front-end applications and scalable back-end servers.
     url: http://xant.us
+  merlyn: 
+    cpan: merlyn
+    description: 
+    url: 
+    github: RandalSchwartz
+
   you:
     description: are an awesome perler!
     name: You

@@ -18,7 +18,7 @@ sub options
         [ 'build_dir=s' => 'build dir path', 
             { default => "./website" } ],
         [   'date=s' => 'which month to build', 
-            { default => $class->today() } ],
+            { default => scalar $class->today() } ],
     );
 }
 
@@ -39,7 +39,7 @@ sub execute
         location => $self->{config}->get_location,
     };
     my $execute_options = {
-        template_file => "templates/index.tt",
+        template_file => "template/index.tt",
         tt_vars => $tt_vars,
         output_file => "$opt->{build_dir}/index.html",
     };

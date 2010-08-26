@@ -31,14 +31,14 @@ sub validate_args
 
 sub today
 {
-    my $class;
+    my ($class) = @_;
     return unless $class;
     $class->date_as_ymd();
 }
 
 sub yesterday
 {
-    my $class;
+    my ($class) = @_;
     return unless $class;
     $class->date_as_ymd( time - 24 * 60 * 60 );
 }
