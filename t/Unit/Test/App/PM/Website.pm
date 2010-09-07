@@ -23,7 +23,7 @@ sub test_help : Tests()
 
     my @test_argv = qw( help );
     my $expected_output_regex = qr/help/;
-    my $result = test_app( $obj => \@test_argv );
+    my $result = App::Cmd::Tester->test_app( $obj , \@test_argv );
     is( $result->stderr, '', "stderr is blank");
     is( $result->error, undef, "threw no exceptions");
     like( $result->stdout, $expected_output_regex, "output is as expected" );

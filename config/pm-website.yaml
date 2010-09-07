@@ -1,18 +1,19 @@
 ---
 config:
-    url : https://groups.pm.org/groups/los-angeles/
-    user: spazm
+    url      : https://groups.pm.org/groups/losangeles/
+    machine  : groups.pm.org
+    username : spazm
 location:
   rubicon:
     address: 1925 S. Bundy
-    mapurl: ""
-    name: The Rubicon Project
-    url: http://rubiconproject.com
+    mapurl:  ""
+    name:    The Rubicon Project
+    url:     http://rubiconproject.com
   weaver:
     address: ""
-    mapurl: ""
-    name: Language Weaver
-    url: http://languageweaver.com
+    mapurl:  ""
+    name:    Language Weaver
+    url:     http://languageweaver.com
 meetings:
   - event_date: 'Thursday, July 16, 2009'
     event_date_pretty: Thursday the 16th
