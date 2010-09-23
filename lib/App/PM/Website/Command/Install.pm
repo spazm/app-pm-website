@@ -9,8 +9,6 @@ use Data::Dumper;
 
 #ABSTRACT: install the built website into production via caldav
 
-sub abstract { "install the built website into production via caldav" }
-
 sub options
 {
     my ($class, $app) = @_;

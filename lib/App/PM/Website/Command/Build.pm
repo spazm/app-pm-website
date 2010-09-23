@@ -7,7 +7,7 @@ use base 'App::PM::Website::Command';
 use Template;
 use Data::Dumper;
 
-sub abstract { "build the website on-disk from the configuration files." }
+#ABSTRACT: render the website to local disk from the configuration files.
 
 sub options
 {
@@ -24,7 +24,11 @@ sub options
 
 sub validate
 {
+    my ($self, $opt, $args ) = @_;
 
+    die $self->usage_error( "no arguments allowed") if @$args;
+
+    return 1;
 }
 
 sub execute
@@ -32,11 +36,13 @@ sub execute
     my( $self, $opt, $args ) = @_;
     
     my $meeting = $self->{config}->get_meetings->[-1];
+    my $loc = $meeting->{location} || 'rubicon';
     my $tt_vars = {
-        m => $meeting,
-        meetings => [ reverse @{ $self->{config}->get_meetings }],
+        m         => $meeting,
+        meetings  => [ reverse @{ $self->{config}->get_meetings } ],
         presenter => $self->{config}->get_presenter,
-        location => $self->{config}->get_location,
+        locations => $self->{config}->get_location,
+        l         => $self->{config}->get_location->{$loc},
     };
     my $execute_options = {
         template_file => "template/index.tt",

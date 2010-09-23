@@ -1,5 +1,8 @@
 package App::PM::Website::Command;
-use App::Cmd::Setup -command;
+#use App::Cmd::Setup -command;
+use strict;
+use warnings;
+use base 'App::Cmd::Command';
 use Config::YAML;
 use POSIX qw(strftime);
 
@@ -46,6 +49,7 @@ sub yesterday
 sub date_as_ymd
 {
     my ( $class, $time ) = @_;
+    $time ||= time();
     return strftime( "%Y-%m-%d", localtime($time) );
 }
 
