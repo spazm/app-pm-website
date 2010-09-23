@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-package fakepackage;
+package main;
 #ABSTRACT: command line front end to App::PM::Website
 
 use warnings;
