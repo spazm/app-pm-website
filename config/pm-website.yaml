@@ -5,7 +5,7 @@ config:
     username : spazm
 location:
   rubicon:
-    address: 1925 S. Bundy
+    address: The Rubicon Project HQ - 1925 S. Bundy, Los Angeles, CA, 90025
     mapurl:  ""
     name:    The Rubicon Project
     url:     http://rubiconproject.com
@@ -14,6 +14,12 @@ location:
     mapurl:  ""
     name:    Language Weaver
     url:     http://languageweaver.com
+  oversee:
+    address: Oversee - 515 S. Flower Street, Suite 4400, Los Angeles, CA 90071
+    mapurl:  http://maps.google.com/maps?f=q&hl=en&q=515+S.+Flower+Street+Los+Angeles,+CA+90071
+    name:    Oversee
+    url:     http://oversee.net
+
 meetings:
   - event_date: 'Thursday, July 16, 2009'
     event_date_pretty: Thursday the 16th
@@ -68,6 +74,17 @@ meetings:
         presenter: bluefeet
         title: 12 CPAN Distros in 12 penta-Minutes
         presenter:
+  - event_date: Wednesday, October 13, 2010
+    location: oversee
+    event_date_pretty: Wednesday the 13th
+    open_call: 1
+    show_news: 1
+    presentations: 
+      - presenter: you
+        title: TBD
+      - presenter: merlyn
+        title: TBD
+        abstract:
 presenter:
   guyshaw:
     name: Guy Shaw
@@ -90,14 +107,14 @@ presenter:
     github: spazm
     url: http://lowlevelmanager.com
   troywill:
-    description: Just a geek who loves Perl
+    description: is Just a geek who loves Perl
     github: troywill
     name: Troy Will
     url: http://troywill.com
   tstanton:
     cpan: tstanton
     description: ""
-    ;github: tstanton
+    #github: tstanton
     name: Tommy Stanton
     url: http://tommystanton.com
   xantus:
@@ -106,10 +123,10 @@ presenter:
     url: http://xant.us
   merlyn: 
     cpan: merlyn
-    description: 
-    url: 
+    name: Randal Schwartz
+    description: -- Just another perl hacker
+    url: http://merlyn.posterous.com/
     github: RandalSchwartz
-
   you:
     description: are an awesome perler!
     name: You
