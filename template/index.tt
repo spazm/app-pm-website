@@ -79,9 +79,10 @@ Area</p>
 
 <h4>About your host:</h4>
 <ul>
-    <li>Andrew Grangaard is a Senior Software Engineer at the Rubicon Project, and long time Perl Monk(ey).</li>
-    <li> The Rubicon Project (http://www.rubiconproject.com)
+    <li>Andrew Grangaard is a Senior Software Engineer and long time Perl Monk(ey).</li>
+[%#    <li> The Rubicon Project (http://www.rubiconproject.com)
 <br>&nbsp;&nbsp; The Rubicon Project is an Advertising Technology Company headquartered in Los Angeles.  Their mission is to automate the selling and buying of online advertising.</li>
+%]
 </ul>
 <p>
 See you at 7 on [% m.event_date_pretty %]!
@@ -89,6 +90,51 @@ See you at 7 on [% m.event_date_pretty %]!
 [% IF('The Rubicon Project' == l.name ) %]
 <iframe marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;t=h&amp;hl=en&amp;msa=0&amp;msid=116471213422869661926.00046c93dc4ea0b8c84c2&amp;ll=34.034188,-118.457189&amp;spn=0.004425,0.008266&amp;output=embed" scrolling="no" width="425" frameborder="0" height="350"></iframe>
 <small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;t=h&amp;hl=en&amp;msa=0&amp;msid=116471213422869661926.00046c93dc4ea0b8c84c2&amp;ll=34.034188,-118.457189&amp;spn=0.004425,0.008266&amp;source=embed" style="color: rgb(0, 0, 255); text-align: left;">Rubicon Project</a> in a larger map</small>
+[% END %]
+[% IF('Oversee' == l.name )%]
+
+<h2>Venue Information</h2>
+<br> Oversee.net
+<br> 515 S. Flower Street, Suite 4400 (44th floor - take the high-rise elevators)
+<br> Los Angeles, CA 90071
+<br> 213-408-0080
+
+<P>
+<b>Notes:</b>
+<ul>
+    <li> There is high security for this building, please bring a PHOTO ID in
+order to access the building.
+
+    <li> Parking:
+    <ol>
+        <li>Please park in the A-Level garage and Oversee.net will provide a parking validation for this event for the <i>first 35 guests</i>.
+        <li>The A-Level garage is located at 515 S. Flower Street
+        <li>There are two entrances to the garage on Flower & 5th Street
+        <li>Once you get to the entrance of the garage, please take a ticket and
+           proceed to the valet service area
+        <li>The garage is only valet, so you will leave your keys with the
+           attendant, who in turn will give you a claim check
+        <li>Go up the elevator into the Paul Hasting building and check in with Security
+        <li>At the time of exit, you will come down to the A-level and present your claim check to the valet attendant
+        <li> You will be asked if you will be paying for your ticket or if you have a validation.  
+        <li> The validation or coupon is offered by the tenant you came to visit.  If the coupon or validation wasn't offered by the tenant, you can make your payment using your credit card or cash.  We accept all major credit cards except for Discover.  Evening rate without validation is $15.
+        <li> If you have any further questions about the garage, please call the Parking office at 213-628-0581
+    </ol>
+    <li>Directions:
+    <ol>
+        <li><b>From LAX</b>: Take the I-105 freeway east to the I-110 North. Go past the
+I-10 interchange and exit at 3rd Street (Flower Street direction). Stay
+in the right lane. Turn right at Flower Street. Garage entrance will be
+on your right hand side, once you pass 5th street light (first entrance
+you see will be the A-level garage).
+        <li><b>From Pasadena</b>: Take the I-110 freeway South to 3rd Street off ramp. Turn
+left on Beaudry. Turn left on 4th Street across freeway, and then make a
+right turn on Flower street.  Garage entrance will be on your right hand
+side, once you pass the 5th street light (first entrance you see will be
+the A-level garage). 
+    </ol>
+</ul>
+
 [% END %]
 
 <h2>Mailing List</h2>
@@ -102,7 +148,9 @@ containing only the word 'subscribe' to<br>
 
 <h2 >Previous Talks</h2>
 <ul>
-        <li><big>2010-Sep-22: <a href=http://tommystanton.com/>Tommy Stanton</a>: App::Git::HomeSync</big>
+        <li><big>2010-Oct-13: Randall Shwartz: compiled vs interpretted languages.</big> (hosted Downtown at <a href=http://oversee.net>Oversee.net</a>)</li>
+        <li><big>2010-Oct-13: Theron Stanford: MagicList::Singleton:</big> an array with hash like properties. TIE magic.</li>
+        <li><big>2010-Sep-22: <a href=http://tommystanton.com/>Tommy Stanton</a>: App::Git::HomeSync a CPAN Module almost finished</big> <a href="http://tommystanton.com/presentations/20100922-Tommy_Stanton-App-Git-HomeSync/">Slides</a> (<a href=http://tommystanton.com/presentations/20100922-Tommy_Stanton-App-Git-HomeSync.tar.gz>Tarball</a>) : <a href=http://tommystanton.com/git/app-git-homesync.git/?h=moosex-app-cmd >Code</a>
         <li><big>2010-Aug-25: <a href=http://lowlevelmanager.com/>Andrew Grangaard</a>: Getting started with App::Cmd</big>
         <li><big>2010-Jul-24 Guy Shaw: pe-cpp, c-pre-processor partial processor for source-to-soure transformation of header files.</big>
         <li><big>2010-Jul-24 Troy Will: Losing weight with perl.</big>
