@@ -9,6 +9,11 @@ location:
     mapurl:  ""
     name:    The Rubicon Project
     url:     http://rubiconproject.com
+  mt:
+    address: Media Temple, 8520 National, Culver City, CA 90232.
+    mapurl:  ""
+    name:    Media Temple
+    url:     http://mediatemple.com
   weaver:
     address: ""
     mapurl:  ""
@@ -84,8 +89,26 @@ meetings:
         title: TBD
       - presenter: merlyn
         title: TBD
-        abstract:
+        abstract: A lightning talk? One of his hour long presentations?  Q&A with Randal?  Crazy technical interview questions: you ask them, he answers them and then critiques them.
+  - event_date: Wednesday, November 17, 2010
+    location: mt
+    event_date_pretty: Wednesday the 17th
+    open_call: 1
+    show_news: 1
+    presentations: 
+      - presenter: joshb
+        title: AnyEvent -- Perl Asynchronous Programming
+        abstract: Event driven programming has been a powerful paradigm for years, but it's emerging as an increasingly important way to work. Making events easy is part of what has made node.js so exciting, and is possible in Python with Eventlet and Ruby with EventMachine. Perl's answer to this is very mature and flexible: AnyEvent. As well as an introduction to the module, how to use it, and some of the other modules in the "family", we'll cover some before/after examples of synchronous code made asynchronous.
+      - presenter: gabec
+        title: Epistemology & Perl Oracles
+        abstract: Most of us are familiar with the output of Perl's native test oracle every time we install a module from CPAN, ok, not ok.  When testing, did you ever think that you might need to know more than that to isolate faults?  This discussion covers the Test Anything Protocol (TAP), capturing system events & using Perl to lean more what you know & what you don't know about the application you are testing.
 presenter:
+  gabec:
+    name: Gabe Costello
+    description: is a Software Quality Assurance Engineer at MediaTemple.
+  joshb:
+    name: Josh Barratt
+    description: is CTO of MediaTemple.
   guyshaw:
     name: Guy Shaw
   bluefeet:
