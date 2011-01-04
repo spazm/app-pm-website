@@ -96,7 +96,7 @@ meetings:
     open_call: 1
     show_news: 1
     presentations: 
-      - presenter: joshb
+      - presenter: jbarratt
         title: AnyEvent -- Perl Asynchronous Programming
         abstract: Event driven programming has been a powerful paradigm for years, but it's emerging as an increasingly important way to work. Making events easy is part of what has made node.js so exciting, and is possible in Python with Eventlet and Ruby with EventMachine. Perl's answer to this is very mature and flexible: AnyEvent. As well as an introduction to the module, how to use it, and some of the other modules in the "family", we'll cover some before/after examples of synchronous code made asynchronous.
       - presenter: gabec
@@ -106,9 +106,10 @@ presenter:
   gabec:
     name: Gabe Costello
     description: is a Software Quality Assurance Engineer at MediaTemple.
-  joshb:
+  jbarratt:
     name: Josh Barratt
     description: is CTO of MediaTemple.
+    github: jbarratt
   guyshaw:
     name: Guy Shaw
   bluefeet:
