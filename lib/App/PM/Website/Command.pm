@@ -5,6 +5,7 @@ use warnings;
 use base 'App::Cmd::Command';
 use Config::YAML;
 use POSIX qw(strftime);
+use Date::Parse qw(str2time);
 
 
 #ABSTRACT: Parent class for App::PM::Website commands
@@ -30,6 +31,17 @@ sub validate_args
     $self->{config} = Config::YAML->new( config => $opt->{config_file} )
         or die $self->usage_error("failed to open configuration file: $!");
     $self->validate( $opt, $args );
+}
+
+sub meetings
+{
+    my $self = shift;
+    my $meetings = $self->{config}->get_meetings;
+    for my $meeting (@$meetings)
+    {
+        $meeting->{epoch} ||= str2time( $meeting->{event_date}, 'PST' );
+    }
+    sort { $b->{epoch} <=> $a->{epoch} } @$meetings;
 }
 
 sub today

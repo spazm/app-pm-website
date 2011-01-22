@@ -35,11 +35,12 @@ sub execute
 {
     my( $self, $opt, $args ) = @_;
     
-    my $meeting = $self->{config}->get_meetings->[-1];
+    my @meetings = $self->meetings();
+    my $meeting = shift @meetings;
     my $loc = $meeting->{location} || 'rubicon';
     my $tt_vars = {
         m         => $meeting,
-        meetings  => [ reverse @{ $self->{config}->get_meetings } ],
+        meetings  => \@meetings,
         presenter => $self->{config}->get_presenter,
         locations => $self->{config}->get_location,
         l         => $self->{config}->get_location->{$loc},
