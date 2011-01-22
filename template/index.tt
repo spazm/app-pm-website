@@ -91,6 +91,19 @@ See you at 7 on [% m.event_date_pretty %]!
 <iframe marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;t=h&amp;hl=en&amp;msa=0&amp;msid=116471213422869661926.00046c93dc4ea0b8c84c2&amp;ll=34.034188,-118.457189&amp;spn=0.004425,0.008266&amp;output=embed" scrolling="no" width="425" frameborder="0" height="350"></iframe>
 <small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;t=h&amp;hl=en&amp;msa=0&amp;msid=116471213422869661926.00046c93dc4ea0b8c84c2&amp;ll=34.034188,-118.457189&amp;spn=0.004425,0.008266&amp;source=embed" style="color: rgb(0, 0, 255); text-align: left;">Rubicon Project</a> in a larger map</small>
 [% END %]
+[% IF('Rent.com' == l.name )%]
+
+<h2>Venue Information</h2>
+<br> Rent.com
+<br> 2425 Olympic Blvd.
+<br> Suite 400 E
+<br> Santa Monica, CA 90404
+<p>
+<P> Notes:
+<p>
+You are better off entering the parking structure through the Olympic entrance, that way you are directly below our building as it can be a bit confusing. Make sure that once you enter the parking structure, you turn right to take the appropriate elevator to the lobby.
+
+[% END %]
 [% IF('Oversee' == l.name )%]
 
 <h2>Venue Information</h2>
@@ -148,6 +161,8 @@ containing only the word 'subscribe' to<br>
 
 <h2 >Previous Talks</h2>
 <ul>
+        <li><big>2010-Nov-17: Josh Barratt: AnyEvent -- Perl Asynchronous Programming.</big> (hosted in Culver City at <a href=http://mediatemple.net>Media Temple</a>)
+        <li><big>2010-Nov-17: Gabe Costello: Epistemology & Perl Oracles</big>
         <li><big>2010-Oct-13: Randall Shwartz: compiled vs interpretted languages.</big> (hosted Downtown at <a href=http://oversee.net>Oversee.net</a>)</li>
         <li><big>2010-Oct-13: Theron Stanford: MagicList::Singleton:</big> an array with hash like properties. TIE magic.</li>
         <li><big>2010-Sep-22: <a href=http://tommystanton.com/>Tommy Stanton</a>: App::Git::HomeSync a CPAN Module almost finished</big> <a href="http://tommystanton.com/presentations/20100922-Tommy_Stanton-App-Git-HomeSync/">Slides</a> (<a href=http://tommystanton.com/presentations/20100922-Tommy_Stanton-App-Git-HomeSync.tar.gz>Tarball</a>) : <a href=http://tommystanton.com/git/app-git-homesync.git/?h=moosex-app-cmd >Code</a>
