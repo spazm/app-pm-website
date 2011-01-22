@@ -5,7 +5,7 @@ use Test::More;
 use App::Cmd::Tester;
 use App::PM::Website;
 
-#use_ok( 'App::PM::Website' );
+use_ok( 'App::PM::Website' );
 
 my $obj = eval {App::PM::Website->new()};
 ok( defined $obj,"object is defined");

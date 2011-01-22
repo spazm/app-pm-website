@@ -3,5 +3,5 @@
 use strict;
 use warnings;
 
-use Test::Class::Load 't/Unit/Test';
+use Test::Class::Load 't/tests';
 Test::Class->runtests;
