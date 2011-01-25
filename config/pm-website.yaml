@@ -116,8 +116,8 @@ meetings:
       - presenter: rick
         title: Inversion of Control and Dependency Injection, using Bread::Board
       - presenter: tstanton
-        title: Blogging in perl -- Anger Whale and Galuga 
-        abstract: What are the pure-perl blog options available to the hacker who wants to createa blog from text files on a filesystem.
+        title: Perl-powered blogging software: Angerwhale to Galuga
+        abstract: I've wanted to host my own blog for over a year now, but I'm stubborn and I have refused to use software that isn't: (1) Powered by Perl; (2) In the culture of the CPAN.
 presenter:
   gabec:
     name: Gabe Costello
