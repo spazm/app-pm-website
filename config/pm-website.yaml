@@ -77,9 +77,9 @@ meetings:
     open_call: 0
     show_news: 1
     presentations:
-      - abstract: ""
+      - abstract: "A program provided by this distribution, \"git-home-sync\", is used to automate  the git/system commands necessary to get a user's home directory to be synced with a Git repository. This allows the user to track things like dot files, making them available on a brand new machine.  For example, your ~/.vimrc and/or ~/.emacs will always be the same on all machines that you use."
         presenter: tstanton
-        title: App::Git::HomeSync
+        title: "App::Git::HomeSync: A CPAN module almost finished"
       - abstract: ""
         presenter: bluefeet
         title: 12 CPAN Distros in 12 penta-Minutes
