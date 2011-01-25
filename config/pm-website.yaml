@@ -115,7 +115,7 @@ meetings:
     presentations:
       - presenter: rick
         title: Inversion of Control and Dependency Injection, using Bread::Board
-      - presenter: tommy
+      - presenter: tstanton
         title: Blogging in perl -- Anger Whale and Galuga 
         abstract: What are the pure-perl blog options available to the hacker who wants to createa blog from text files on a filesystem.
 presenter:
