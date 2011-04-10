@@ -25,7 +25,7 @@ Area</p>
 	<dt><b>Linkedin Group</b>
 	<dd>Show your support for perl by joining the <a href=http://www.linkedin.com/groups?gid=2804627>Los Angeles Perl Mongers</a> and/or <a href="http://www.linkedin.com/groups?gid=40830">Perl Mongers</a> groups.
 	<dt><b>FaceBook</b>
-        <dd>Come join the newly created Los Angeles Perl Mongers <a href=http://www.facebook.com/group.php?gid=119158178096277>Facebook group</a>. We also have a Los Angeles Perl Mongers <a href=http://www.facebook.com/pages/Los-Angeles-Perl-Mongers/110460472327702>Facebook Page</a>. 
+        <dd>Come join the newly created Los Angeles Perl Mongers <a href=http://www.facebook.com/group.php?gid=119158178096277>Facebook group</a>. We also have a Los Angeles Perl Mongers <a href=http://www.facebook.com/pages/Los-Angeles-Perl-Mongers/110460472327702>Facebook Page</a>.
 </dl>
 [% END %]
 
@@ -39,7 +39,7 @@ Area</p>
 	<tr><td> Theme: </td><td> Perl!</td></tr>
 	<tr><td> RSVP:  </td><td> Responses always appreciated.</td></tr>
 </table>
-<p> 
+<p>
 
 [% IF m.presentations -%]
     <h4>Presentations:</h4>
@@ -48,7 +48,7 @@ Area</p>
             [%- speaker = presenter.${talk.presenter} -%]
             <li>[% speaker.name %]: <i>[% talk.title -%]</i>
             [% IF talk.abstract -%]
-                <br>Abstract: 
+                <br>Abstract:
                 <br>
                 [% talk.abstract %]
             [%- END %]
@@ -79,7 +79,7 @@ Area</p>
 
 <h4>About your host:</h4>
 <ul>
-    <li>Andrew Grangaard is a Senior Software Engineer and long time Perl Monk(ey).</li>
+    <li>Andrew Grangaard is Chief Ninjaneer at <a href="http://open42.com">Open42</a> and long time Perl Monk(ey).</li>
 [%#    <li> The Rubicon Project (http://www.rubiconproject.com)
 <br>&nbsp;&nbsp; The Rubicon Project is an Advertising Technology Company headquartered in Los Angeles.  Their mission is to automate the selling and buying of online advertising.</li>
 %]
@@ -129,7 +129,7 @@ order to access the building.
            attendant, who in turn will give you a claim check
         <li>Go up the elevator into the Paul Hasting building and check in with Security
         <li>At the time of exit, you will come down to the A-level and present your claim check to the valet attendant
-        <li> You will be asked if you will be paying for your ticket or if you have a validation.  
+        <li> You will be asked if you will be paying for your ticket or if you have a validation.
         <li> The validation or coupon is offered by the tenant you came to visit.  If the coupon or validation wasn't offered by the tenant, you can make your payment using your credit card or cash.  We accept all major credit cards except for Discover.  Evening rate without validation is $15.
         <li> If you have any further questions about the garage, please call the Parking office at 213-628-0581
     </ol>
@@ -144,7 +144,7 @@ you see will be the A-level garage).
 left on Beaudry. Turn left on 4th Street across freeway, and then make a
 right turn on Flower street.  Garage entrance will be on your right hand
 side, once you pass the 5th street light (first entrance you see will be
-the A-level garage). 
+the A-level garage).
     </ol>
 </ul>
 
@@ -153,11 +153,31 @@ the A-level garage).
 <h2>Mailing List</h2>
 
 <p style="text-align: center;" align="center">
-You can subscribe to our mailing list by sending a message 
+You can subscribe to our mailing list by sending a message
 containing only the word 'subscribe' to<br>
 
 <tt>losangeles-pm-request<!-- yes, this is a comment -->@mail.pm.org</tt>
 <p>
+
+[% IF 0 %]
+<h2 >Previous Talks auto</h2>
+[% IF meetings %]
+<dl>
+    [%- FOREACH m IN meetings %]
+        <dt>[% m.epoch %] : [% m.location %]
+        [%- FOREACH talk IN m.presentations %]
+            [%- speaker = presenter.${talk.presenter} %]
+            <dd><big>[% speaker.name %] : [% talk.title %]</big>
+            [%- IF talk.links -%]
+                [%- FOREACH l IN talk.links %]
+                    <a href=[% l.0 %]>[% l.1 %]</a> |
+                [%- END -%]
+            [%- END -%]
+        [% END %]
+    [%- END -%]
+</dl>
+[%- END -%]
+[%- END -%]
 
 <h2 >Previous Talks</h2>
 <ul>
@@ -194,7 +214,7 @@ containing only the word 'subscribe' to<br>
 	<li><big>2009-Nov-04 Tommy Stanton: Unstructured group discussion, TDD, <a href=http://search.cpan.org/perldoc?Vroom::Vroom>Vroom</a>, Vim. </big>
 	<li><big>2009-Sep-23 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: <a href="http://www.lowlevelmanager.com/2009/09/access-jira-api-from-perl-with.html">Access JIRA API using perl with JIRA::Client</a></big>
 	<li><big>2009-Sep-23 Andrew Grangaard: <a href="http://www.lowlevelmanager.com/2009/09/care-and-feeding-of-third-party-modules.html">Care and Feeding of Third Party Perl Modules: a discussion</a></big>
-	<li><big>2009-Aug-27 John Beppu: <a href="http://github.com/beppu/stardust">Stardust</a>, a perl COMET server.</big>  
+	<li><big>2009-Aug-27 John Beppu: <a href="http://github.com/beppu/stardust">Stardust</a>, a perl COMET server.</big>
 	<a href="http://beppu.github.com/stardust/presentations/2009-08/stardust-at-la-pm.tar.gz">Slides</a></li>
 	<li><big>2009-Aug-27 <a href="http://bluefeet.net">Aran Deltac</a> presents: Destination Moose.</big></li>
 	<li><big> 2009-Jul-17 <a href="http://xant.us">David Davis</a> : Mojo and Mojolicious, a next generation perl web framework
@@ -209,8 +229,8 @@ containing only the word 'subscribe' to<br>
         <a href=http://www.slideshare.net/shixilun/module-versioning-with-apache-1x-and-modperl-1x target="_blank" >slides</a>
         </li>
 	<li><big>2008-Mar-18 Thomas MacNeil: Writing
-		Modules </big> 
-		<a href="/presentations/writing-modules/Nihilistic_to_AltruisticPG.ppt" target="_blank">powerpoint</a>, 
+		Modules </big>
+		<a href="/presentations/writing-modules/Nihilistic_to_AltruisticPG.ppt" target="_blank">powerpoint</a>,
 		<a href="/presentations/writing-modules/Nihilistic_to_AltruisticPG.pdf" target="_blank">pdf</a> </li>
 	<li><big>2008-Feb-28 Richard Dice: 7 Stages of a Perl Monger and more</big></li>
 	<li><big>2008-Jan-29 Christopher Paulika: <a href="/presentations/tdd/TheRoadToTestDrivenDevelopment.ppt" target="_blank">The Road to Test Driven Development</a></big></li>

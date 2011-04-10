@@ -31,6 +31,29 @@ location:
     url:     http://rent.com
 
 meetings:
+  - event_date: "Wednesday, March 23, 2011"
+    location: rent
+    open_call: 0
+    show_news: 1
+    event_date_pretty: Wednesday the 23rd
+    presentations:
+      - presenter: tstanton
+        title: Scale9x discussion/review/take-away
+      - presenter: bluefeet
+        title: TBD: Moose Best Practices
+      - presenter: spazm
+        title: workflows with Class::Workflow
+  - event_date: 'Wednesday, January 19, 2011'
+    location: rent
+    open_call: 1
+    show_news: 1
+    event_date_pretty: Wednesday the 19th
+    presentations:
+      - presenter: rick
+        title: Inversion of Control and Dependency Injection, using Bread::Board
+      - presenter: tstanton
+        title: Blogging in perl -- Anger Whale and Galuga
+        abstract: What are the pure-perl blog options available to the hacker who wants to createa blog from text files on a filesystem.
   - event_date: 'Thursday, July 16, 2009'
     event_date_pretty: Thursday the 16th
     presentations:
@@ -142,7 +165,7 @@ presenter:
     name: Mon-Chaio Lo
   spazm:
     cpan: spazm
-    description: ""
+    description: runs the Los Angeles Perl Mongers and serves as Chief Ninjaneer for Open42.
     name: Andrew Grangaard
     github: spazm
     url: http://lowlevelmanager.com
