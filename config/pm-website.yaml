@@ -77,9 +77,9 @@ meetings:
     open_call: 0
     show_news: 1
     presentations:
-      - abstract: ""
+      - abstract: "A program provided by this distribution, \"git-home-sync\", is used to automate  the git/system commands necessary to get a user's home directory to be synced with a Git repository. This allows the user to track things like dot files, making them available on a brand new machine.  For example, your ~/.vimrc and/or ~/.emacs will always be the same on all machines that you use."
         presenter: tstanton
-        title: App::Git::HomeSync
+        title: "App::Git::HomeSync: A CPAN module almost finished"
       - abstract: ""
         presenter: bluefeet
         title: 12 CPAN Distros in 12 penta-Minutes
@@ -115,9 +115,9 @@ meetings:
     presentations:
       - presenter: rick
         title: Inversion of Control and Dependency Injection, using Bread::Board
-      - presenter: tommy
-        title: Blogging in perl -- Anger Whale and Galuga 
-        abstract: What are the pure-perl blog options available to the hacker who wants to createa blog from text files on a filesystem.
+      - presenter: tstanton
+        title: Perl-powered blogging software: Angerwhale to Galuga
+        abstract: I've wanted to host my own blog for over a year now, but I'm stubborn and I have refused to use software that isn't: (1) Powered by Perl; (2) In the culture of the CPAN.
 presenter:
   gabec:
     name: Gabe Costello
@@ -153,7 +153,7 @@ presenter:
     url: http://troywill.com
   tstanton:
     cpan: tstanton
-    description: ""
+    description: "Tommy's interests are: 1) Tappin' on the command-line, in a GNU/Linux setting; 2) Pickin' on the banjo, in a bluegrass setting"
     #github: tstanton
     name: Tommy Stanton
     url: http://tommystanton.com
