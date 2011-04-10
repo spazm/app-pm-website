@@ -140,7 +140,12 @@ meetings:
         title: Inversion of Control and Dependency Injection, using Bread::Board
       - presenter: tstanton
         title: Perl-powered blogging software: Angerwhale to Galuga
-        abstract: I've wanted to host my own blog for over a year now, but I'm stubborn and I have refused to use software that isn't: (1) Powered by Perl; (2) In the culture of the CPAN.
+        abstract: "I've wanted to host my own blog for over a year now, but I'm stubborn and I have refused to use software that isn't: (1) Powered by Perl; (2) In the culture of the CPAN."
+        links:
+            - name: slides
+              url:  http://tommystanton.com/presentations/20110119-Perl_powered_blogging_software_Angerwhale_to_Galuga/ 
+            - name: tarball
+              url:  http://tommystanton.com/presentations/20110119-Perl_powered_blogging_software_Angerwhale_to_Galuga.tar.gz
 presenter:
   gabec:
     name: Gabe Costello
