@@ -29,8 +29,25 @@ location:
     mapurl:  http://maps.google.com/maps?f=q&hl=en&q=2425+Olympic+Blvd+Ste+400+E+Santa+Monica+90404
     name:    Rent.com
     url:     http://rent.com
+  open42:
+    address: Open42 - 840 Apollo St.  Suite 240, El Segundo, CA 
+    mapurl:
+    name:    Open42
+    url:     http://open42.com
 
 meetings:
+  - event_date: "Wednesday April 27, 2011"
+    event_date_pretty: Wednesday the 27th
+    location: open42
+    open_call: 0
+    show_news: 1
+    presentations:
+      - presenter: thaljef
+        title: Perl::Critic
+        abstract: "Perl::Critic is the leading static analyzer for Perl.  Software development teams (large and small) use Perl::Critic every day to automatically find bugs, manage complexity, and enforce consistency in their Perl source code.  My presentation will demonstrate how to use, configure, and extend Perl::Critic.  I'll also show how to automate and integrate Perl::Critic into your development cycle.  Perl::Critic is available on CPAN here: http://search.cpan.org/dist/Perl-Critic"
+      - presenter: beppu
+        title: "TBD: Rhetoric: a simple blogging system for perl"
+        abstract: "How Beppu got his <del>groove</del>blog back"
   - event_date: "Wednesday, March 23, 2011"
     location: rent
     open_call: 0
@@ -186,17 +203,29 @@ presenter:
     name: Tommy Stanton
     url: http://tommystanton.com
   xantus:
+    name: 
     cpan: xantus
     description: is a software engineer who specializes in rich front-end applications and scalable back-end servers.
     url: http://xant.us
   merlyn: 
-    cpan: merlyn
     name: Randal Schwartz
-    description: -- Just another perl hacker
-    url: http://merlyn.posterous.com/
+    cpan: merlyn
     github: RandalSchwartz
+    url: http://merlyn.posterous.com/
+    description: -- Just another perl hacker
   rick:
     name: Rick Apichairuk
+  thaljef:
+    name: Jeffrey Thalhammer
+    description: The Perl Critic!
+    cpan: thaljef
+    github: thaljef
+    url: http://perlcritic.org/
+  beppu:
+    name: John Beppu
+    description:
+    cpan: beppu
+    github: beppu
   you:
     description: are an awesome perler!
     name: You
