@@ -99,10 +99,26 @@ See you at 7 on [% m.event_date_pretty %]!
 <br> Suite 400 E
 <br> Santa Monica, CA 90404
 <p>
-<P> Notes:
+<h4> Notes:</h4>
 <p>
 You are better off entering the parking structure through the Olympic entrance, that way you are directly below our building as it can be a bit confusing. Make sure that once you enter the parking structure, you turn right to take the appropriate elevator to the lobby.
 
+[% END %]
+[% IF('Open42' == l.name ) %]
+
+<h2>Venue Information</h2>
+<br> Open 42
+<br> 840 Apollo St.
+<br> Suite 240
+<br> El Segundo, CA  90245
+<p>
+<h4> Notes:</h4>
+<br> 840 Apollo is (north) off of Rosencrantz, between Aviation and Sepulveda.
+<br> Second driveway on the right, pull into the parking structure and park in the guest spaces on the roof.
+<p>
+The door from the parking structure to the second floor may be locked, we'll have someone come check it at 6:45 and later.
+<br>
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=840+Apollo+St.+Suite+240,+El+Segundo,+CA&amp;sll=33.904046,-118.38438&amp;sspn=0.038539,0.082827&amp;gl=us&amp;ie=UTF8&amp;hq=&amp;hnear=840+Apollo+St+%23240,+El+Segundo,+California+90245&amp;ll=33.903316,-118.385818&amp;spn=0.019269,0.041413&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=840+Apollo+St.+Suite+240,+El+Segundo,+CA&amp;sll=33.904046,-118.38438&amp;sspn=0.038539,0.082827&amp;gl=us&amp;ie=UTF8&amp;hq=&amp;hnear=840+Apollo+St+%23240,+El+Segundo,+California+90245&amp;ll=33.903316,-118.385818&amp;spn=0.019269,0.041413&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
 [% END %]
 [% IF('Oversee' == l.name )%]
 
