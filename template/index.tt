@@ -57,11 +57,21 @@ Area</p>
     </ol>
 [% END -%]
 
+[%- USE Gravatar (
+    default => 'wavatar',
+    size    => 60 ,
+    rating  => 'R',
+) -%]
+[%- USE CPAN = format( "%s@cpan.org") %]
 [% IF m.presentations -%]
     <h4>About our speakers:</h4>
     [% FOREACH talk IN m.presentations -%]
         [%- speaker = presenter.${talk.presenter} -%]
         [%- IF speaker.name -%]
+            [%- email = speaker.email or CPAN(speaker.cpan) -%]
+            [%- IF speaker.cpan -%]
+                <img src = "[% Gravatar( email => email) | html %]" >
+            [% END -%]
             [%- IF speaker.url %]
                 <a href=[% speaker.url %] >[% speaker.name %]</a>
             [%- ELSE %]
