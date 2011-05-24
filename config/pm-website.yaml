@@ -36,6 +36,19 @@ location:
     url:     http://open42.com
 
 meetings:
+  - event_date: "Wednesday May 25, 2011"
+    event_date_pretty: Wednesday the 25th
+    location: rent
+    open_call: 0
+    show_news: 1
+    presentations:
+      - presenter: buddy
+        title: Method::Signatures (or, How I Learned to Stop Worrying and Love MooseX::Declare).
+        abstract: "MooseX::Declare has a bad rep among most Moose fans, but it turns out that there's nothing wrong with it once you get MooseX::Method::Signatures out of the way.  This is the story of my quest to replace MooseX::Method::Signatures with something based on Method::Signatures, thus improving the reliability, performance, and error reporting of MooseX::Declare."
+        obstruct: "Thanx everyone for the encouragement!  I'll be putting the finishing touches on the presentation this weekend, so I should be well and ready by then.  (And if I'm not, then I reckon I'll just be unwell and unready. <g>)  See you guys then!"
+      - presenter: spazm
+        title: "Dancing on Air (or, What's Plack got to do with it?)"
+        abstract: "Dancer is a micro web application framework.  <br>PSGI is an interface between web applications and web servers.  <br>Plack is an implementation of PSGI.  <br><br>Put them all together and what do we get?"
   - event_date: "Wednesday April 27, 2011"
     event_date_pretty: Wednesday the 27th
     location: open42
@@ -173,6 +186,13 @@ presenter:
     github: jbarratt
   guyshaw:
     name: Guy Shaw
+  buddy:
+    name: Buddy Burden
+    description: is Just another barefoot coder at Rent.com
+    cpan:     barefoot
+    facebook: barefootcoder
+    github:   barefootcoder
+    url: 
   bluefeet:
     cpan: bluefeet
     github: bluefeet
