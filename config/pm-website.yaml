@@ -36,6 +36,16 @@ location:
     url:     http://open42.com
 
 meetings:
+  - event_date: "Wednesday July 20, 2011"
+    event_date_pretty: Some Wednesday in July
+    location: tbd
+    open_call: 1
+    show_news: 1
+    presentations:
+      - presenter: you
+        title: awesomeness
+        abstract: what have you been up to?
+
   - event_date: "Wednesday May 25, 2011"
     event_date_pretty: Wednesday the 25th
     location: rent
