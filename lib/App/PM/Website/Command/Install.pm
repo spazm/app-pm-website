@@ -13,10 +13,11 @@ sub options
 {
     my ($class, $app) = @_;
     return (
-        [ 'url=s'      => 'path to webdav directory' ],
-        [ 'filename=s' => 'upload name, rather than index.html' , {default => 'index.html' }],
-        [ 'username=s' => 'username for webdav, override .netrc' ],
-        [ 'password=s' => 'password for webdav, override .netrc' ],
+        [ 'url=s'         => 'path to webdav directory' ],
+        [ 'filename=s'    => 'upload name, rather than index.html' , {default => 'index.html' }],
+        [ 'username=s'    => 'username for webdav, override .netrc' ],
+        [ 'password=s'    => 'password for webdav, override .netrc' ],
+        [ 'certificate=s' => 'path to ca certificate' ],
     );
 }
 
@@ -76,6 +77,11 @@ sub execute
     my ( $self, $opt, $args ) = @_;
 
     my $webdav             = HTTP::DAV->new();
+    if( $opt->{certificate} )
+    {
+        print Dumper { certificate => $opt->{certificate} };
+        $webdav->get_user_agent->ssl_opts(SSL_ca_file => $opt->{certificate}) 
+    }
     my %webdav_credentials = (
         -user  => $opt->{username},
         -pass  => $opt->{password},
