@@ -1,19 +1,25 @@
 ---
 config:
-    url      : https://groups.pm.org/groups/losangeles/
-    machine  : groups.pm.org
-    username : spazm
+    url         : https://groups.pm.org/groups/losangeles/
+    machine     : groups.pm.org
+    username    : spazm
+    certificate : cacert.pem
 location:
+  ticketmaster:
+    address  : TicketMaster - 7060 Hollywood Blvd, Los Angeles 90028
+    mapurl:  http://maps.google.com/maps?f=q&hl=en&q=7060+Hollywood+Blvd,Los+Angeles,+CA+90028
+    name     : TicketMaster / Live Nation
+    url      : http://ticketmaster.com
   rubicon:
-    address: The Rubicon Project HQ - 1925 S. Bundy, Los Angeles, CA, 90025
-    mapurl:  ""
-    name:    The Rubicon Project
-    url:     http://rubiconproject.com
+    address : The Rubicon Project HQ - 1925 S. Bundy, Los Angeles, CA, 90025
+    mapurl  : ""
+    name    : The Rubicon Project
+    url     : http://rubiconproject.com
   mt:
-    address: Media Temple, 8520 National, Culver City, CA 90232.
-    mapurl:  ""
-    name:    Media Temple
-    url:     http://mediatemple.com
+    address : Media Temple, 8520 National, Culver City, CA 90232.
+    mapurl  : ""
+    name    : Media Temple
+    url     : http://mediatemple.com
   weaver:
     address: ""
     mapurl:  ""
@@ -36,6 +42,16 @@ location:
     url:     http://open42.com
 
 meetings:
+  - event_date: "Wednesday August 31, 2011"
+    event_date_pretty: Wednesday the 31st
+    location: ticketmaster
+    open_call: 0
+    show_news: 1
+    presentations: 
+      - presenter: plotkin
+        title: Implementation of a Custom Facebook Integration
+      - presenter: olson
+        title: Implementation of a Custom Facebook Integration
   - event_date: "Wednesday July 20, 2011"
     event_date_pretty: Some Wednesday in July
     location: tbd
@@ -256,6 +272,16 @@ presenter:
     description:
     cpan: beppu
     github: beppu
+  plotkin:
+    name: Jacob Plotkin
+    linkedin: http://www.linkedin.com/pub/jacob-plotkin/2/742/939
+    description: ticketmaster engineer
+  olson:
+    name: Michael Olson
+    description: ticketmaster engineer
+  a_ticketmaster_engineer:
+    description: To be named later.
+    name: A ticketmaster engineer
   you:
     description: are an awesome perler!
     name: You
