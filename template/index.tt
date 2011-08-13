@@ -2,10 +2,10 @@
 <head>
 <link rel="Stylesheet" type="text/css" media="all" href="http://dev.perl.org/perl-styles.css"
 <link rel="Stylesheet" type="text/css" media="all" href="http://la.pm.org/headers.css"
-</head>	
+</head>    
 <body>
-	<center>
-	<img id="_x0000_i1025" src="http://la.pm.org/images/lalogo.gif" border="0" height="101" width="121"><a href="http://www.pm.org"><img id="_x0000_i1026" src="http://la.pm.org/images/pm.gif" border="0" height="108" width="249"></a>
+    <center>
+    <img id="_x0000_i1025" src="http://la.pm.org/images/lalogo.gif" border="0" height="101" width="121"><a href="http://www.pm.org"><img id="_x0000_i1026" src="http://la.pm.org/images/pm.gif" border="0" height="108" width="249"></a>
 <h1 style="text-align: center;" align="center"><st1:city w:st="on"><st1:place w:st="on">Los Angeles</st1:place></st1:city> Perl Mongers</h1>
 
 <p style="text-align: center;" align="center">The Perl Users Group of the <st1:city w:st="on"><st1:place w:st="on">Los
@@ -22,9 +22,9 @@ Area</p>
         <dd> What have you done recently with Perl?  Come tell your friends and let us all learn together!</dd>
         <br>
     [% END %]
-	<dt><b>Linkedin Group</b>
-	<dd>Show your support for perl by joining the <a href=http://www.linkedin.com/groups?gid=2804627>Los Angeles Perl Mongers</a> and/or <a href="http://www.linkedin.com/groups?gid=40830">Perl Mongers</a> groups.
-	<dt><b>FaceBook</b>
+    <dt><b>Linkedin Group</b>
+    <dd>Show your support for perl by joining the <a href=http://www.linkedin.com/groups?gid=2804627>Los Angeles Perl Mongers</a> and/or <a href="http://www.linkedin.com/groups?gid=40830">Perl Mongers</a> groups.
+    <dt><b>FaceBook</b>
         <dd>Come join the newly created Los Angeles Perl Mongers <a href=http://www.facebook.com/group.php?gid=119158178096277>Facebook group</a>. We also have a Los Angeles Perl Mongers <a href=http://www.facebook.com/pages/Los-Angeles-Perl-Mongers/110460472327702>Facebook Page</a>.
 </dl>
 [% END %]
@@ -32,13 +32,13 @@ Area</p>
 <h2>Upcoming Events</h2>
 <h3>LA.pm's next meeting</h3>
 <table>
-	<tr><td> What:  </td><td> Los Angeles Perl Mongers Meeting</td></tr>
-	<tr><td> When:  </td><td> 7-9pm</td></tr>
-	<tr><td> Date:  </td><td> [% m.event_date %]</td></tr>
-	<tr><td> Where: </td><td> [% l.address %]</td></tr>
-	<tr><td> Theme: </td><td> Perl!</td></tr>
-	<tr><td> Refreshments: </td><td> Food and BEvERages provided by Demand Media</td></tr>
-	<tr><td> RSVP:  </td><td> Responses always appreciated.</td></tr>
+    <tr><td> What:  </td><td> Los Angeles Perl Mongers Meeting</td></tr>
+    <tr><td> When:  </td><td> 7-9pm</td></tr>
+    <tr><td> Date:  </td><td> [% m.event_date %]</td></tr>
+    <tr><td> Where: </td><td> [% l.address %]</td></tr>
+    <tr><td> Theme: </td><td> Perl!</td></tr>
+    <tr><td> Refreshments: </td><td> Food and BEvERages provided by Demand Media</td></tr>
+    <tr><td> RSVP:  </td><td> Responses always appreciated.</td></tr>
 </table>
 <p>
 
@@ -201,24 +201,61 @@ containing only the word 'subscribe' to<br>
 [% IF meetings %]
 <dl>
     [%- FOREACH m IN meetings %]
-        <dt>[% m.epoch %] : [% m.location %]
+        <dt>[% m.ds1 %]
         [%- FOREACH talk IN m.presentations %]
             [%- speaker = presenter.${talk.presenter} %]
-            <dd><big>[% speaker.name %] : [% talk.title %]</big>
+[% IF 0 %]
+    <li><big>[% m.ds1 %]: [% presenter.${talk.presenter} %] [% talk.title %].</big>(Hosted at 
+[% END %]
+            [%- email = speaker.email or CPAN(speaker.cpan) -%]
+            [%- IF email -%]
+                <img src = "[% Gravatar( email => email) | html %]" >
+            [% END -%]
+            <dd><big>[% speaker.name %]: <em>[% talk.title %]</em></big>
             [%- IF talk.links -%]
+                ( 
                 [%- FOREACH l IN talk.links %]
                     <a href=[% l.0 %]>[% l.1 %]</a> |
                 [%- END -%]
+                )
             [%- END -%]
+        [% END %]
+        [% IF m.location %]
+            <dd> Hosted at [% m.location %]</dd>
         [% END %]
     [%- END -%]
 </dl>
 [%- END -%]
 [%- END -%]
 
-<h2 >Previous Talks</h2>
-<h4>note: yeah, sorry, I'll be updating the list of past presentations soon...</h4>
+<h2> Previous Talks </h2>
+[%- USE old_date = DateTime( year=2010, month=11, day=17) -%]
+[% IF meetings %]
+[%- USE String.Compare(old_date.ymd) -%]
 <ul>
+    [%- FOREACH m IN meetings %]
+        [% LAST IF !String.Compare.compare( m.dt.ymd ) %]
+        [%- FOREACH talk IN m.presentations %]
+            [%- speaker = presenter.${talk.presenter} %]
+    <li><big>[% m.ds1 %]: 
+    [% IF speaker.url -%]
+      <a href=[% speaker.url %]>[% speaker.name %]</a>
+    [% ELSE -%]
+      [% speaker.name %]
+    [% END -%] : [% talk.title %].</big>
+            [%- IF talk.links -%]
+                =>  
+                [%- FOREACH l IN talk.links %]
+                    <a target='_NEW' href=[% l.url %]>[% l.name %]</a> 
+                [%- END -%]
+            [%- END -%]
+        [% END %]
+    [%- IF 0 and speaker.cpan -%]
+        [%- email = CPAN(speaker.cpan) -%]
+        <a href="http://metacpan.org/author/[% speaker.cpan %]"><img src = "[% Gravatar( email => email) | html %]" ></a>
+    [% END -%]
+    [%- END -%]
+[%- END -%]
         <li><big>2010-Nov-17: Josh Barratt: AnyEvent -- Perl Asynchronous Programming.</big> (hosted in Culver City at <a href=http://mediatemple.net>Media Temple</a>)
         <li><big>2010-Nov-17: Gabe Costello: Epistemology & Perl Oracles</big>
         <li><big>2010-Oct-13: Randall Shwartz: compiled vs interpretted languages.</big> (hosted Downtown at <a href=http://oversee.net>Oversee.net</a>)</li>
@@ -235,47 +272,47 @@ containing only the word 'subscribe' to<br>
         <li><big>2010-Mar-27 <a href=http://tommystanton.com/ >Tommy Stanton</a>: "Git your home directory in sync"</big>
         <li><big>2010-Mar-27 <a href=http://lowlevelmanager.com >Andrew Grangaard</a>: "Dist::Zilla - distribution builder; installer not included" packaging CPAN distributions using <a href=http://search.cpan.org/dist/Dist-Zilla/ >Dist::Zilla</a>.</big>
         <li><big>2010-Feb: no meeting.</big>
-	<li><big>2010-Jan-27 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: Hadoop Streaming with Perl. Discussion of Hadoop and using Hadoop::Streaming perl module to simplify using Hadoop Streaming interface </big>
-	<br><a href="http://la.pm.org/presentations/hadoop-slides-html">Slides</a>
-	|  <a href=http://github.com/spazm/config/blob/master/hadoop/slides/slides.vroom >Slides (raw vroom format)</a>
-	| <a href=http://search.cpan.org/perldoc?Hadoop::Streaming::Mapper>Hadoop::Streaming::Mapper</a> CPAN module.
-	| <a href=http://hadoop.apache.org>Hadoop</a> general information.
-	<li><big>2010-Jan-27 <a href="http://bluefeet.net">Aran Deltac</a> presents: Concise Code.</big>
-	<br><a href=http://www.lowlevelmanager.com/2010/02/la-perl-mongers-january-recap.html > recap </a>
+    <li><big>2010-Jan-27 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: Hadoop Streaming with Perl. Discussion of Hadoop and using Hadoop::Streaming perl module to simplify using Hadoop Streaming interface </big>
+    <br><a href="http://la.pm.org/presentations/hadoop-slides-html">Slides</a>
+    |  <a href=http://github.com/spazm/config/blob/master/hadoop/slides/slides.vroom >Slides (raw vroom format)</a>
+    | <a href=http://search.cpan.org/perldoc?Hadoop::Streaming::Mapper>Hadoop::Streaming::Mapper</a> CPAN module.
+    | <a href=http://hadoop.apache.org>Hadoop</a> general information.
+    <li><big>2010-Jan-27 <a href="http://bluefeet.net">Aran Deltac</a> presents: Concise Code.</big>
+    <br><a href=http://www.lowlevelmanager.com/2010/02/la-perl-mongers-january-recap.html > recap </a>
 
-	<li><big>2009-Dec-02 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: Vim and Perl.  A group discussion of tips and techniques.</big>
-	<br><a href="http://la.pm.org/presentations/vim-slides-html">Slides</a>
-	 | <a href="http://github.com/spazm/config">Config Files git repo</a>
-	 | <a href="http://www.lowlevelmanager.com/2009/11/perl-vim-notes.html">original notes</a>
-	    <li><big>2009-Nov-04 <a href=http://tommystanton.com/>Tommy Stanton</a>: Testing for the Win! Test::More, Test::Most and Test::Class.</big>
-	    <br><a href=http://tommystanton.com/presentations/20091104-LA.pm-Tommy_Stanton-Advanced_TDD.tar.gz>Advanced TDD.tar.gz</a> Vroom slides.</li>
-	<li><big>2009-Nov-04 Tommy Stanton: Unstructured group discussion, TDD, <a href=http://search.cpan.org/perldoc?Vroom::Vroom>Vroom</a>, Vim. </big>
-	<li><big>2009-Sep-23 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: <a href="http://www.lowlevelmanager.com/2009/09/access-jira-api-from-perl-with.html">Access JIRA API using perl with JIRA::Client</a></big>
-	<li><big>2009-Sep-23 Andrew Grangaard: <a href="http://www.lowlevelmanager.com/2009/09/care-and-feeding-of-third-party-modules.html">Care and Feeding of Third Party Perl Modules: a discussion</a></big>
-	<li><big>2009-Aug-27 John Beppu: <a href="http://github.com/beppu/stardust">Stardust</a>, a perl COMET server.</big>
-	<a href="http://beppu.github.com/stardust/presentations/2009-08/stardust-at-la-pm.tar.gz">Slides</a></li>
-	<li><big>2009-Aug-27 <a href="http://bluefeet.net">Aran Deltac</a> presents: Destination Moose.</big></li>
-	<li><big> 2009-Jul-17 <a href="http://xant.us">David Davis</a> : Mojo and Mojolicious, a next generation perl web framework
-	</big></li>
-	<li><big> 2009-Jul-17 Mon-Chaio Lo : Interviewing (perl) programmers
-	</big></li>
-	<li><big> 2009-Jun-17 David Williams: Data Processing and Numerical Analysis in Perl.
-	</big></li>
-	<li><big> 2009-Jun-17 Matt Burns: Moose and Joose, programming is fun again.
-	</big></li>
+    <li><big>2009-Dec-02 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: Vim and Perl.  A group discussion of tips and techniques.</big>
+    <br><a href="http://la.pm.org/presentations/vim-slides-html">Slides</a>
+     | <a href="http://github.com/spazm/config">Config Files git repo</a>
+     | <a href="http://www.lowlevelmanager.com/2009/11/perl-vim-notes.html">original notes</a>
+        <li><big>2009-Nov-04 <a href=http://tommystanton.com/>Tommy Stanton</a>: Testing for the Win! Test::More, Test::Most and Test::Class.</big>
+        <br><a href=http://tommystanton.com/presentations/20091104-LA.pm-Tommy_Stanton-Advanced_TDD.tar.gz>Advanced TDD.tar.gz</a> Vroom slides.</li>
+    <li><big>2009-Nov-04 Tommy Stanton: Unstructured group discussion, TDD, <a href=http://search.cpan.org/perldoc?Vroom::Vroom>Vroom</a>, Vim. </big>
+    <li><big>2009-Sep-23 <a href=http://lowlevelmanager.com>Andrew Grangaard</a>: <a href="http://www.lowlevelmanager.com/2009/09/access-jira-api-from-perl-with.html">Access JIRA API using perl with JIRA::Client</a></big>
+    <li><big>2009-Sep-23 Andrew Grangaard: <a href="http://www.lowlevelmanager.com/2009/09/care-and-feeding-of-third-party-modules.html">Care and Feeding of Third Party Perl Modules: a discussion</a></big>
+    <li><big>2009-Aug-27 John Beppu: <a href="http://github.com/beppu/stardust">Stardust</a>, a perl COMET server.</big>
+    <a href="http://beppu.github.com/stardust/presentations/2009-08/stardust-at-la-pm.tar.gz">Slides</a></li>
+    <li><big>2009-Aug-27 <a href="http://bluefeet.net">Aran Deltac</a> presents: Destination Moose.</big></li>
+    <li><big> 2009-Jul-17 <a href="http://xant.us">David Davis</a> : Mojo and Mojolicious, a next generation perl web framework
+    </big></li>
+    <li><big> 2009-Jul-17 Mon-Chaio Lo : Interviewing (perl) programmers
+    </big></li>
+    <li><big> 2009-Jun-17 David Williams: Data Processing and Numerical Analysis in Perl.
+    </big></li>
+    <li><big> 2009-Jun-17 Matt Burns: Moose and Joose, programming is fun again.
+    </big></li>
         <li><big> 2008-Apr-17 Theron Stanford: Module Versioning with Apache 1x and Modperl 1x </big>
         <a href=http://www.slideshare.net/shixilun/module-versioning-with-apache-1x-and-modperl-1x target="_blank" >slides</a>
         </li>
-	<li><big>2008-Mar-18 Thomas MacNeil: Writing
-		Modules </big>
-		<a href="/presentations/writing-modules/Nihilistic_to_AltruisticPG.ppt" target="_blank">powerpoint</a>,
-		<a href="/presentations/writing-modules/Nihilistic_to_AltruisticPG.pdf" target="_blank">pdf</a> </li>
-	<li><big>2008-Feb-28 Richard Dice: 7 Stages of a Perl Monger and more</big></li>
-	<li><big>2008-Jan-29 Christopher Paulika: <a href="/presentations/tdd/TheRoadToTestDrivenDevelopment.ppt" target="_blank">The Road to Test Driven Development</a></big></li>
-	<li><big>2007-Nov-08 Ben Tilly: <a href="/presentations/ab-testing/" target="_blank">How
-			to do A/B Testing on Websites</a></big></li>
-	<li><big>2007-Sep-20 brian d foy: Making your own CPAN</big></li>
-	<li><big>2007-Aug-16 Randal Schwartz: an Introduction to Rose::DB::Object</big></li>
+    <li><big>2008-Mar-18 Thomas MacNeil: Writing
+        Modules </big>
+        <a href="/presentations/writing-modules/Nihilistic_to_AltruisticPG.ppt" target="_blank">powerpoint</a>,
+        <a href="/presentations/writing-modules/Nihilistic_to_AltruisticPG.pdf" target="_blank">pdf</a> </li>
+    <li><big>2008-Feb-28 Richard Dice: 7 Stages of a Perl Monger and more</big></li>
+    <li><big>2008-Jan-29 Christopher Paulika: <a href="/presentations/tdd/TheRoadToTestDrivenDevelopment.ppt" target="_blank">The Road to Test Driven Development</a></big></li>
+    <li><big>2007-Nov-08 Ben Tilly: <a href="/presentations/ab-testing/" target="_blank">How
+            to do A/B Testing on Websites</a></big></li>
+    <li><big>2007-Sep-20 brian d foy: Making your own CPAN</big></li>
+    <li><big>2007-Aug-16 Randal Schwartz: an Introduction to Rose::DB::Object</big></li>
 
 </ul>
 
@@ -287,9 +324,9 @@ containing only the word 'subscribe' to<br>
         <li><a href="http://thousand-oaks.pm.org">Thousand Oaks Perl Mongers</a></li>
         <li><a href="http://oc.pm.org">Orange County Perl Mongers</a></li>
         <li><a href="http://sandiego.pm.org">San Diego Perl Mongers</a></li>
-	</ul>
-	<hr>
-	Questions?  Join the mailing list, or contact <tt><b>losangeles-pm-admins@<!-- yes, this is another comment -->mail.pm.org</b></tt>
+    </ul>
+    <hr>
+    Questions?  Join the mailing list, or contact <tt><b>losangeles-pm-admins@<!-- yes, this is another comment -->mail.pm.org</b></tt>
 <hr>
 <script language="JavaScript" src="http://www.perl.org/misc/site-sponsor-js.html"></script>
 The camel image is a registered trademark of O'Reilly Media, Inc.  Used with

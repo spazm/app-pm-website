@@ -5,8 +5,10 @@ use warnings;
 use base 'App::Cmd::Command';
 use Config::YAML;
 use POSIX qw(strftime);
+use Data::Dumper;
 use Date::Parse qw(str2time);
-
+use DateTime::Format::Strptime;
+use DateTime;
 
 #ABSTRACT: Parent class for App::PM::Website commands
 
@@ -37,9 +39,16 @@ sub meetings
 {
     my $self = shift;
     my $meetings = $self->{config}->get_meetings;
+    my $strp = new DateTime::Format::Strptime(
+        pattern => '%Y-%b-%d',
+        locale  => 'en',
+    );
     for my $meeting (@$meetings)
     {
         $meeting->{epoch} ||= str2time( $meeting->{event_date}, 'PST' );
+        my $dt = DateTime->from_epoch( epoch => $meeting->{epoch} );
+        $meeting->{dt} = $dt;
+        $meeting->{ds1} = $strp->format_datetime($dt);
     }
     sort { $b->{epoch} <=> $a->{epoch} } @$meetings;
 }
