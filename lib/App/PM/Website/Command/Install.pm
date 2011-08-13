@@ -25,13 +25,28 @@ sub validate
 {
     my ($self, $opt, $args ) = @_;
 
+    $self->validate_certificate($opt);
     $self->validate_url($opt);
-    $self->validate_login( $opt );
+    $self->validate_login($opt);
 
     if(@$args)
     {
         die $self->usage_error("no arguments allowed") 
     }
+}
+sub validate_certificate
+{
+    my ($self, $opt) = @_;
+    my $c = $self->{config}->{config};
+    $opt->{certificate} ||= $c->{certificate};
+
+    if ($opt->{certificate} && ! -f $opt->{certificate} )
+    {
+        die $self->usage_error("could not find certificate file: $opt->{certificate}");
+
+    }
+
+    return 1; #certificate is optional.
 }
 sub validate_url
 {
