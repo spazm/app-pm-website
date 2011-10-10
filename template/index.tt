@@ -37,6 +37,7 @@ Area</p>
 	<tr><td> Date:  </td><td> [% m.event_date %]</td></tr>
 	<tr><td> Where: </td><td> [% l.address %]</td></tr>
 	<tr><td> Theme: </td><td> Perl!</td></tr>
+	<tr><td> Refreshments: </td><td> Food and BEvERages provided by Demand Media</td></tr>
 	<tr><td> RSVP:  </td><td> Responses always appreciated.</td></tr>
 </table>
 <p>
@@ -48,9 +49,7 @@ Area</p>
             [%- speaker = presenter.${talk.presenter} -%]
             <li>[% speaker.name %]: <i>[% talk.title -%]</i>
             [% IF talk.abstract -%]
-                <br>Abstract:
-                <br>
-                [% talk.abstract %]
+                <br>Abstract: [% talk.abstract %]
             [%- END %]
             </li>
         [%- END %]
@@ -67,7 +66,8 @@ Area</p>
     <h4>About our speakers:</h4>
     [% FOREACH talk IN m.presentations -%]
         [%- speaker = presenter.${talk.presenter} -%]
-        [%- IF speaker.name -%]
+        [%- seen = {}; %]
+        [%- IF speaker.name && !seen.${speaker} -%]
             [%- email = speaker.email or CPAN(speaker.cpan) -%]
             [%- IF speaker.cpan -%]
                 <img src = "[% Gravatar( email => email) | html %]" >
@@ -89,7 +89,7 @@ Area</p>
 
 <h4>About your host:</h4>
 <ul>
-    <li>Andrew Grangaard is Chief Ninjaneer at [Undisclosed Start-up][%# <a href="http://open42.com">Open42</a>%] and long time Perl Monk(ey).</li>
+    <li>Andrew Grangaard is <strike>Chief Ninjaneer at [Undisclosed Start-up]</strike> Lead Engineer at <a href="http://demandmedia.com">Demand Media</a> and long time Perl Monk(ey).</li>
 [%#    <li> The Rubicon Project (http://www.rubiconproject.com)
 <br>&nbsp;&nbsp; The Rubicon Project is an Advertising Technology Company headquartered in Los Angeles.  Their mission is to automate the selling and buying of online advertising.</li>
 %]
@@ -217,6 +217,7 @@ containing only the word 'subscribe' to<br>
 [%- END -%]
 
 <h2 >Previous Talks</h2>
+<h4>note: yeah, sorry, I'll be updating the list of past presentations soon...</h4>
 <ul>
         <li><big>2010-Nov-17: Josh Barratt: AnyEvent -- Perl Asynchronous Programming.</big> (hosted in Culver City at <a href=http://mediatemple.net>Media Temple</a>)
         <li><big>2010-Nov-17: Gabe Costello: Epistemology & Perl Oracles</big>

@@ -47,6 +47,18 @@ location:
     url:     http://open42.com
 
 meetings:
+  - event_date: "Wednesday October 26, 2011"
+    event_date_pretty: Wednesday the 26st
+    location: demand 
+    open_call: 1
+    show_news: 1
+    presentations:
+      - presenter: spazm
+        title: use Japan;
+        abstract: Some awesome cpan modules from japan, inspired by a YAPC::na lightening talk
+      - presenter: bluefeet
+        title: DBI/SQL stack
+        abstract: presenting a DBI/SQL stack that he has been constructing for about a year now.  The talk will cover the whats and hows of SQL::Dialect, SQL::Abstract::Query, and DBIx::ResultSet.  Also to be discussed is DBIx::Lookup and DBIx::AutoID, which are currently in the works.
   - event_date: "Wednesday September 21, 2011"
     event_date_pretty: Wednesday the 21st
     location: mt
@@ -56,7 +68,7 @@ meetings:
       - presenter: nate_jones
         title: Managing your dotfiles with perl and git
         abstract: "The Managing your dotfiles with perl and git to end all presentations about managing your dotfiles with perl and git"
-      - presentation: you
+      - presenter: you
         title: TBD
   - event_date: "Wednesday August 31, 2011"
     event_date_pretty: Wednesday the 31st
@@ -238,7 +250,7 @@ presenter:
   bluefeet:
     cpan: bluefeet
     github: bluefeet
-    description: 'runs the Thousand-oaks perl mongers, contributes to CPAN and runs a major perl initiative for ValueClick.com'
+    description: 'ran the Thousand-oaks perl mongers, contributes to CPAN and now writes code for rent.com'
     name: Aran Deltac
     url: http://bluefeet.net
   kenny:
@@ -249,7 +261,7 @@ presenter:
     name: Mon-Chaio Lo
   spazm:
     cpan: spazm
-    description: runs the Los Angeles Perl Mongers and serves as Chief Ninjaneer for Open42.
+    description: runs the Los Angeles Perl Mongers and serves as <strike>Chief Ninjaneer for [undisclosed startup]</strike>Lead Engineer at Demand Media.
     name: Andrew Grangaard
     github: spazm
     url: http://lowlevelmanager.com
