@@ -20,6 +20,11 @@ location:
     mapurl  : ""
     name    : Media Temple
     url     : http://mediatemple.com
+  demand:
+    address : Demand Media, 1299 Ocean, Santa Monica, CA
+    mapurl  :
+    name    : Demand Media
+    url     : http://demandmedia.com
   weaver:
     address: ""
     mapurl:  ""
@@ -42,6 +47,17 @@ location:
     url:     http://open42.com
 
 meetings:
+  - event_date: "Wednesday September 21, 2011"
+    event_date_pretty: Wednesday the 21st
+    location: mt
+    open_call: 1
+    show_news: 1
+    presentations:
+      - presenter: nate_jones
+        title: Managing your dotfiles with perl and git
+        abstract: "The Managing your dotfiles with perl and git to end all presentations about managing your dotfiles with perl and git"
+      - presentation: you
+        title: TBD
   - event_date: "Wednesday August 31, 2011"
     event_date_pretty: Wednesday the 31st
     location: ticketmaster
@@ -279,6 +295,8 @@ presenter:
   olson:
     name: Michael Olson
     description: ticketmaster engineer
+  nate_jones:
+    name: Nate Jones
   a_ticketmaster_engineer:
     description: To be named later.
     name: A ticketmaster engineer
