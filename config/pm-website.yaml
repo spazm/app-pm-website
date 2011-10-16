@@ -68,8 +68,15 @@ meetings:
       - presenter: nate_jones
         title: Managing your dotfiles with perl and git
         abstract: "The Managing your dotfiles with perl and git to end all presentations about managing your dotfiles with perl and git"
-      - presenter: you
-        title: TBD
+        links:
+          - name : Presentatation
+            url  : https://github.com/justone/dfm_present
+          - name : ( pdf )
+            url  : https://github.com/downloads/justone/dfm_present/dfm_present.pdf
+          - name : (main repo)
+            url  : https://github.com/justone/dotfiles
+      - presenter: mike_frager
+        title: Vertical Tables
   - event_date: "Wednesday August 31, 2011"
     event_date_pretty: Wednesday the 31st
     location: ticketmaster
@@ -78,18 +85,19 @@ meetings:
     presentations: 
       - presenter: plotkin
         title: Implementation of a Custom Facebook Integration
-      - presenter: olson
+      - presenter: mwolson
         title: Implementation of a Custom Facebook Integration
+        links:
+          - name : slides
+            url  : http://mwolson.org/notes/manual/FacebookSlides.pdf
   - event_date: "Wednesday July 20, 2011"
     event_date_pretty: Some Wednesday in July
-    location: tbd
+    location:
     open_call: 1
     show_news: 1
     presentations:
-      - presenter: you
-        title: awesomeness
-        abstract: what have you been up to?
-
+      - presenter: merlyn
+        title: emergency social meeting
   - event_date: "Wednesday May 25, 2011"
     event_date_pretty: Wednesday the 25th
     location: rent
@@ -100,6 +108,13 @@ meetings:
         title: Method::Signatures (or, How I Learned to Stop Worrying and Love MooseX::Declare).
         abstract: "MooseX::Declare has a bad rep among most Moose fans, but it turns out that there's nothing wrong with it once you get MooseX::Method::Signatures out of the way.  This is the story of my quest to replace MooseX::Method::Signatures with something based on Method::Signatures, thus improving the reliability, performance, and error reporting of MooseX::Declare."
         obstruct: "Thanx everyone for the encouragement!  I'll be putting the finishing touches on the presentation this weekend, so I should be well and ready by then.  (And if I'm not, then I reckon I'll just be unwell and unready. <g>)  See you guys then!"
+        links:
+            - name: Method::Signatures
+              url:  http://metacpan.org/module/Method::Signatures
+            - name: Method::Signatures::Modifiers
+              url:  http://metacpan.org/module/Method::Signatures::Modifiers
+            - name: first bug
+              url:  https://github.com/schwern/method-signatures/issues/36
       - presenter: spazm
         title: "Dancing on Air (or, What's Plack got to do with it?)"
         abstract: "Dancer is a micro web application framework.  <br>PSGI is an interface between web applications and web servers.  <br>Plack is an implementation of PSGI.  <br><br>Put them all together and what do we get?"
@@ -112,6 +127,9 @@ meetings:
       - presenter: thaljef
         title: Perl::Critic
         abstract: "Perl::Critic is the leading static analyzer for Perl.  Software development teams (large and small) use Perl::Critic every day to automatically find bugs, manage complexity, and enforce consistency in their Perl source code.  My presentation will demonstrate how to use, configure, and extend Perl::Critic.  I'll also show how to automate and integrate Perl::Critic into your development cycle.  Perl::Critic is available on CPAN here: http://search.cpan.org/dist/Perl-Critic"
+        links:
+          - name: Perl::Critic
+            url:  http://metacpan.com/module/Perl::Critic
       - presenter: beppu
         title: "TBD: Rhetoric: a simple blogging system for perl"
         abstract: "How Beppu got his <del>groove</del>blog back"
@@ -137,7 +155,12 @@ meetings:
         title: Inversion of Control and Dependency Injection, using Bread::Board
       - presenter: tstanton
         title: Blogging in perl -- Anger Whale and Galuga
-        abstract: What are the pure-perl blog options available to the hacker who wants to createa blog from text files on a filesystem.
+        abstract: What are the pure-perl blog options available to the hacker who wants to create a blog from text files on a filesystem.
+        links:
+            - name: slides
+              url:  http://tommystanton.com/presentations/20110119-Perl_powered_blogging_software_Angerwhale_to_Galuga/ 
+            - name: tarball
+              url:  http://tommystanton.com/presentations/20110119-Perl_powered_blogging_software_Angerwhale_to_Galuga.tar.gz
   - event_date: 'Thursday, July 16, 2009'
     event_date_pretty: Thursday the 16th
     presentations:
@@ -214,22 +237,6 @@ meetings:
       - presenter: gabec
         title: Epistemology & Perl Oracles
         abstract: Most of us are familiar with the output of Perl's native test oracle every time we install a module from CPAN, ok, not ok.  When testing, did you ever think that you might need to know more than that to isolate faults?  This discussion covers the Test Anything Protocol (TAP), capturing system events & using Perl to lean more what you know & what you don't know about the application you are testing.
-  - event_date: 'Wednesday, January 19, 2011'
-    location: rent
-    open_call: 1
-    show_news: 1
-    event_date_pretty: Wednesday the 19th
-    presentations:
-      - presenter: rick
-        title: Inversion of Control and Dependency Injection, using Bread::Board
-      - presenter: tstanton
-        title: Perl-powered blogging software: Angerwhale to Galuga
-        abstract: "I've wanted to host my own blog for over a year now, but I'm stubborn and I have refused to use software that isn't: (1) Powered by Perl; (2) In the culture of the CPAN."
-        links:
-            - name: slides
-              url:  http://tommystanton.com/presentations/20110119-Perl_powered_blogging_software_Angerwhale_to_Galuga/ 
-            - name: tarball
-              url:  http://tommystanton.com/presentations/20110119-Perl_powered_blogging_software_Angerwhale_to_Galuga.tar.gz
 presenter:
   gabec:
     name: Gabe Costello
@@ -304,14 +311,17 @@ presenter:
     name: Jacob Plotkin
     linkedin: http://www.linkedin.com/pub/jacob-plotkin/2/742/939
     description: ticketmaster engineer
-  olson:
+  mwolson:
     name: Michael Olson
     description: ticketmaster engineer
+    url: http://mwolson.org/
   nate_jones:
     name: Nate Jones
   a_ticketmaster_engineer:
     description: To be named later.
     name: A ticketmaster engineer
+  mike_frager:
+    name: Mike Frager
   you:
     description: are an awesome perler!
     name: You
