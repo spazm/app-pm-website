@@ -77,6 +77,10 @@ sub validate_login
         {
             $opt->{username} ||= $mach->login();
             $opt->{password} ||= $mach->password();
+        } 
+        else
+        {
+            warn "machine '$machine' not found in .netrc"
         }
     }
 
@@ -95,7 +99,15 @@ sub execute
     if( $opt->{certificate} )
     {
         print Dumper { certificate => $opt->{certificate} };
-        $webdav->get_user_agent->ssl_opts(SSL_ca_file => $opt->{certificate}) 
+        my $ua = $webdav->get_user_agent;
+        if ( $ua->can('ssl_opts') )
+        {
+            $ua->ssl_opts(SSL_ca_file => $opt->{certificate});
+        }
+        else
+        {
+            warn "Old version of LWP::UserAgent doesn't support ssl_opts"
+        }
     }
     my %webdav_credentials = (
         -user  => $opt->{username},
