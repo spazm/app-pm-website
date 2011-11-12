@@ -47,6 +47,15 @@ location:
     url:     http://open42.com
 
 meetings:
+  - event_date: "2011/12/7"
+    location: demand
+    open_call: 1
+    show_news: 0
+    presentations:
+      - presenter: mike_frager
+        title: VOIP with perl and asterisk/freepbx
+      - presenter: you
+        title: TBD
   - event_date: "Wednesday October 26, 2011"
     event_date_pretty: Wednesday the 26st
     location: demand 
@@ -56,9 +65,34 @@ meetings:
       - presenter: spazm
         title: use Japan;
         abstract: Some awesome cpan modules from japan, inspired by a YAPC::na lightening talk
+        links:
+          - name : slides
+            url  : http://www.slideshare.net/lestrrat/cpan-gems-from-the-far-east
       - presenter: bluefeet
         title: DBI/SQL stack
         abstract: presenting a DBI/SQL stack that he has been constructing for about a year now.  The talk will cover the whats and hows of SQL::Dialect, SQL::Abstract::Query, and DBIx::ResultSet.  Also to be discussed is DBIx::Lookup and DBIx::AutoID, which are currently in the works.
+        links:
+          - name : slides
+            url  : 
+
+          - name : SQL::Dialect
+            url  : http://metacpan.org/module/SQL::Dialect
+          - name : (git)
+            url  : http://github.com/bluefeet/SQL-Dialect
+
+          - name : SQL::Abstract::Query
+            url  : http://metacpan.org/module/SQL::Abstract::Query
+          - name : (git)
+            url  : http://github.com/bluefeet/SQL-Abstract-Query
+
+          - name : DBIx::ResultSet
+            url  : http://metacpan.org/module/DBIx::ResultSet
+          - name : (git)
+            url  : http://github.com/bluefeet/DBIx-ResultSet
+
+          - name : (DBIx::AutoID git)
+            url  : http://github.com/bluefeet/DBIx-AutoID
+
   - event_date: "Wednesday September 21, 2011"
     event_date_pretty: Wednesday the 21st
     location: mt
