@@ -2,7 +2,7 @@
 <head>
 <link rel="Stylesheet" type="text/css" media="all" href="http://dev.perl.org/perl-styles.css"
 <link rel="Stylesheet" type="text/css" media="all" href="http://la.pm.org/headers.css"
-</head>    
+</head>
 <body>
     <center>
     <img id="_x0000_i1025" src="http://la.pm.org/images/lalogo.gif" border="0" height="101" width="121"><a href="http://www.pm.org"><img id="_x0000_i1026" src="http://la.pm.org/images/pm.gif" border="0" height="108" width="249"></a>
@@ -34,7 +34,7 @@ Area</p>
 <table>
     <tr><td> What:  </td><td> Los Angeles Perl Mongers Meeting</td></tr>
     <tr><td> When:  </td><td> 7-9pm</td></tr>
-    <tr><td> Date:  </td><td> [% m.event_date %]</td></tr>
+    <tr><td> Date:  </td><td> [% m.ds_std %]</td></tr>
     <tr><td> Where: </td><td> [% l.address %]</td></tr>
     <tr><td> Theme: </td><td> Perl!</td></tr>
     <tr><td> Refreshments: </td><td> Food and BEvERages provided by Demand Media</td></tr>
