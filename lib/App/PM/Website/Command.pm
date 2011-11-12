@@ -9,6 +9,7 @@ use Data::Dumper;
 use Date::Parse qw(str2time);
 use DateTime::Format::Strptime;
 use DateTime;
+use Lingua::EN::Numbers::Ordinate qw(ordinate);
 
 #ABSTRACT: Parent class for App::PM::Website commands
 
@@ -17,7 +18,7 @@ sub opt_spec
     my ( $class, $app ) = @_;
     return (
         $class->options($app),
-        [ 'config-file=s' => "path to configuration file" , 
+        [ 'config-file=s' => "path to configuration file",
             { required => 1, default => "config/pm-website.yaml"}],
         [],
         [ 'help|h!'    => "show this help" ],
@@ -43,12 +44,25 @@ sub meetings
         pattern => '%Y-%b-%d',
         locale  => 'en',
     );
+    my $strp_std = new DateTime::Format::Strptime(
+        pattern => '%A %B %e, %Y',
+        locale  => 'en',
+    );
+    my $strp_pretty = new DateTime::Format::Strptime(
+        pattern => '%A the %e',
+        locale  => 'en',
+    );
+
     for my $meeting (@$meetings)
     {
         $meeting->{epoch} ||= str2time( $meeting->{event_date}, 'PST' );
         my $dt = DateTime->from_epoch( epoch => $meeting->{epoch} );
         $meeting->{dt} = $dt;
         $meeting->{ds1} = $strp->format_datetime($dt);
+        $meeting->{ds_std} = $strp_std->format_datetime($dt);
+        my $pretty = $strp_pretty->format_datetime($dt);
+        $pretty =~ s/(\d+) \s* $/ordinate($1)/ex;
+        $meeting->{event_date_pretty} = $pretty;
     }
     sort { $b->{epoch} <=> $a->{epoch} } @$meetings;
 }

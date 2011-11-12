@@ -36,7 +36,7 @@ sub execute
     my( $self, $opt, $args ) = @_;
     
     my ($meeting, @past_meetings) = $self->meetings();
-    my $loc = $meeting->{location} || 'rubicon';
+    my $loc = $meeting->{location} || 'demand';
     my $tt_vars = {
         m         => $meeting,
         meetings  => \@past_meetings,
