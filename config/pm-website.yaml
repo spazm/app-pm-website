@@ -45,8 +45,24 @@ location:
     mapurl:
     name:    Open42
     url:     http://open42.com
+  scale:
+    address: Scale10x - Hilton Los Angeles Airport - 5711 West Century Boulevard, 90045
+    mapurl: http://maps.google.com/maps?q=5711+West+Century+Boulevard,+Los+Angeles,+California,+USA+90045&hnear=5711+W+Century+Blvd,+Los+Angeles,+California+90045&gl=us&t=m&z=16&vpsrc=0
+    url:    https://www.socallinuxexpo.org/scale10x/events/bird-feather-sessions
 
 meetings:
+  - event_date: "2012/01/21"
+    location: scale
+    open_call: 1
+    presentations:
+      - presenter: spazm
+        title    : App::Sulla a jabber bot using Bot::Backbone
+        abstract : Example of a xmpp/jabber bot with HTTPD/rest input, using AnyEvent::XMPP and AnyEvent::HTTPD on the backend.
+        links:
+          - name : src
+            url  : http://github.com/spazm/p5-app-sulla
+      - presenter : you
+        title    : TBD: what do you want to discuss?
   - event_date: "2011/12/7"
     location: demand
     open_call: 1
@@ -54,11 +70,26 @@ meetings:
     presentations:
       - presenter: mike_frager
         title: VOIP with perl and asterisk/freepbx
-      - presenter: you
-        title: TBD
+        links:
+          - name: pdf
+            url : /presentations/voip/VOIP_with_Perl.pdf
+      - presenter: davido
+        title: Inline::C, The Eminently Palatable Approach to XS
+        abstract: "We will discuss installation, basic use, applications of use such as time optimization, memory optimization, unit testing of C code, linking in specialty C libraries, callbacks, and more.  I'll include a brief discussion on Inline::CPP, which I took over co-maintainership on just a few days ago."
+        links:
+          - name: Inline::CPP
+            url : http://metacpan.org/module/Inline::CPP
+          - name: (slides repo)
+            url : https://github.com/daoswald/Inline-C-Perl-Mongers-Talk
+          - name: slides.odp
+            url : https://github.com/daoswald/Inline-C-Perl-Mongers-Talk/blob/master/inline_c_slides.odp
+          - name: primes.cpp
+            url: "https://github.com/daoswald/Inline-C-Perl-Mongers-Talk/blob/master/primes.cpp"
+          - name: primesbench.pl
+            url : https://github.com/daoswald/Inline-C-Perl-Mongers-Talk/blob/master/primesbench.pl
   - event_date: "Wednesday October 26, 2011"
     event_date_pretty: Wednesday the 26st
-    location: demand 
+    location: demand
     open_call: 1
     show_news: 1
     presentations:
@@ -356,6 +387,10 @@ presenter:
     name: A ticketmaster engineer
   mike_frager:
     name: Mike Frager
+  davido:
+    name: David Oswald
+    cpan: davido
+    github: daoswald
   you:
     description: are an awesome perler!
     name: You
