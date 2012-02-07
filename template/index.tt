@@ -51,6 +51,12 @@ Area</p>
             [% IF talk.abstract -%]
                 <br>Abstract: [% talk.abstract %]
             [%- END %]
+            [%- IF talk.links -%]
+                <br>
+                [%- FOREACH l IN talk.links %]
+                    <a target='_NEW' href=[% l.url %]>[% l.name %]</a>
+                [%- END -%]
+            [%- END -%]
             </li>
         [%- END %]
     </ol>
@@ -106,10 +112,13 @@ Demand Media
 <br>Santa Monica, CA
 
 <h3>Parking: </h3>
-  Park in one of the SM Public Lots on 2nd -- #4 and #2 are closest to the building.  I can provide parking vouchers for those buildings. ( Metered parking on Ocean is also an option, might be in the free evening zone by then?).  <b>I DO NOT</b> have vouchers for the underground lot at 1299.
+  Park in one of the SM Public Lots on 2nd -- #4 and #2 are closest to the building.  I can provide parking vouchers for those buildings. ( Metered parking on Ocean is also an option, might be in the free evening zone by then?).  <b>I DO NOT</b> have vouchers for the underground lot at 1299 -- but then it's only $5 to park there after 6pm.
+
+<h3>1299 Ocean</h3>
+Demand has three locations in Santa Monica.  You don't want to go to the 1333 Second St location, which is 2 blocks south.  Come to 1299 Ocean.  Then entrance is on Arizona between Ocean and Second.
 
 <h3>Elevators:</h3>
-  I may have to ferry people up the elevators, if so I'll be in the lobby from 6:45-7.  I'll also leave notice with the security guard so they can follow whatever building-level security protocol they have.
+  I will have to ferry people up the elevators, I'll be in the lobby from 6:45-7.  I'll also leave notice with the security guard so they can follow whatever building-level security protocol they have.
 
 <h3>Food & BEvERages:</h3>
   The pizza has been ordered, the soda fridge is scheduled to be freshly restocked and the beers should be on ice.
