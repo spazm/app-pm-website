@@ -58,8 +58,8 @@ sub meetings
         $meeting->{epoch} ||= str2time( $meeting->{event_date}, 'PST' );
         my $dt = DateTime->from_epoch( epoch => $meeting->{epoch} );
         $meeting->{dt} = $dt;
-        $meeting->{ds1} = $strp->format_datetime($dt);
-        $meeting->{ds_std} = $strp_std->format_datetime($dt);
+        $meeting->{ds1} ||= $strp->format_datetime($dt);
+        $meeting->{ds_std} ||= $strp_std->format_datetime($dt);
         my $pretty = $strp_pretty->format_datetime($dt);
         $pretty =~ s/(\d+) \s* $/ordinate($1)/ex;
         $meeting->{event_date_pretty} = $pretty;

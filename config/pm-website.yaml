@@ -41,7 +41,7 @@ location:
     name:    Rent.com
     url:     http://rent.com
   open42:
-    address: Open42 - 840 Apollo St.  Suite 223, El Segundo, CA 
+    address: Open42 - 840 Apollo St.  Suite 223, El Segundo, CA
     mapurl:
     name:    Open42
     url:     http://open42.com
@@ -51,18 +51,59 @@ location:
     url:    https://www.socallinuxexpo.org/scale10x/events/bird-feather-sessions
 
 meetings:
+  - event_date: "2012/05/23"
+    #ds_std:     TBD: Third or Fourth, Wednesday or Thursday, May 2012
+    location:   demand
+    open_call:  1
+    presentations:
+      - presenter : you
+        title     : TBD
+        abstract  : Informal discussion of tools, comings and goings, etc.
+      - presenter : btilly
+        title     : Template::ExpandHash (likely postponed)
+        abstract  : A new perl module to expand a hash as a template.
+        links     :
+          - name  : Template::ExpandHash
+            url   : https://metacpan.org/module/Template::ExpandHash
+          - name  : git
+            url   : https://github.com/btilly/Template-ExpandHash
+#       - presenter : merlyn
+#         title     : Testing Classes with Test::Trap (unconfirmed)
+  - event_date: "2012/03/21"
+    location: demand
+    open_call: 0
+    presentations:
+      - presenter : thaljef
+        title    : Pinto for managing Perl dependencies
+        abstract: The CPAN is a blessing and a curse.  You can find code for every problem imaginable, but managing all those dependencies is extremely frustrating.  Until now.  Pinto is one example of a new breed of tools for managing your Perl dependencies.  In this presentation we will explore what Pinto does, demonstrate how to use it in the development cycle, and compare it with similar tools.
+      - presenter : tonyg
+        title    : Perl for Home Security
+        abstract : Tony will share a home security system that he designed that runs on Perl.  His system uses motion sensors, loud sirens, audio announcers, a wireless remote, text message alerts and logs all activity to disk.
+        links    :
+            - name : ppt
+              url  : "http://www.metracom.com/Perl_Alarm.pptx"
+  - event_date: "2012/02/23"
+    location: demand
+    open_call: 1
+    presentations:
+      - presenter : briandfoy
+        title    : How to deliver a presentation
+      - presenter : briandfoy
+        title    : Zero to Perl, teaching newbies.
+        abstract : Introduction to perl for newbies (YAPC.na preview)
   - event_date: "2012/01/21"
     location: scale
     open_call: 1
     presentations:
+      - presenter: you
+        title: Scale BoF discussion
+    cancelled:
       - presenter: spazm
         title    : App::Sulla a jabber bot using Bot::Backbone
         abstract : Example of a xmpp/jabber bot with HTTPD/rest input, using AnyEvent::XMPP and AnyEvent::HTTPD on the backend.
         links:
           - name : src
             url  : http://github.com/spazm/p5-app-sulla
-      - presenter : you
-        title    : TBD: what do you want to discuss?
   - event_date: "2011/12/7"
     location: demand
     open_call: 1
@@ -284,7 +325,7 @@ meetings:
     event_date_pretty: Wednesday the 13th
     open_call: 1
     show_news: 1
-    presentations: 
+    presentations:
       - presenter: you
         title: TBD
       - presenter: merlyn
@@ -295,7 +336,7 @@ meetings:
     event_date_pretty: Wednesday the 17th
     open_call: 1
     show_news: 1
-    presentations: 
+    presentations:
       - presenter: jbarratt
         title: AnyEvent -- Perl Asynchronous Programming
         abstract: Event driven programming has been a powerful paradigm for years, but it's emerging as an increasingly important way to work. Making events easy is part of what has made node.js so exciting, and is possible in Python with Eventlet and Ruby with EventMachine. Perl's answer to this is very mature and flexible: AnyEvent. As well as an introduction to the module, how to use it, and some of the other modules in the "family", we'll cover some before/after examples of synchronous code made asynchronous.
@@ -312,6 +353,11 @@ presenter:
     github: jbarratt
   guyshaw:
     name: Guy Shaw
+  briandfoy:
+    name: brian d foy
+    cpan: bdfoy
+    github: briandfoy
+    url: http://www252.pair.com/~comdog/
   buddy:
     name: Buddy Burden
     description: is Just another barefoot coder at Rent.com
@@ -349,11 +395,11 @@ presenter:
     name: Tommy Stanton
     url: http://tommystanton.com
   xantus:
-    name: 
+    name:
     cpan: xantus
     description: is a software engineer who specializes in rich front-end applications and scalable back-end servers.
     url: http://xant.us
-  merlyn: 
+  merlyn:
     name: Randal Schwartz
     cpan: merlyn
     github: RandalSchwartz
@@ -391,6 +437,12 @@ presenter:
     name: David Oswald
     cpan: davido
     github: daoswald
+  tonyg:
+    name: Tony Gasparovic
+  btilly:
+    name: Ben Tilly
+    cpan: tilly
+    github: btilly
   you:
     description: are an awesome perler!
     name: You

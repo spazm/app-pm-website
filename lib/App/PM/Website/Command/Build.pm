@@ -15,9 +15,9 @@ sub options
 
     #TODO: make this a config
     return (
-        [ 'build_dir=s' => 'build dir path', 
+        [ 'build_dir=s' => 'build dir path',
             { default => "./website" } ],
-        [   'date=s' => 'which month to build', 
+        [   'date=s' => 'which month to build',
             { default => scalar $class->today() } ],
     );
 }
@@ -34,7 +34,7 @@ sub validate
 sub execute
 {
     my( $self, $opt, $args ) = @_;
-    
+
     my ($meeting, @past_meetings) = $self->meetings();
     my $loc = $meeting->{location} || 'demand';
     my $tt_vars = {
