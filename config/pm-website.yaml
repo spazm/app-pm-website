@@ -51,16 +51,18 @@ location:
     url:    https://www.socallinuxexpo.org/scale10x/events/bird-feather-sessions
 
 meetings:
-  - event_date: "2012/05/23"
-    #ds_std:     TBD: Third or Fourth, Wednesday or Thursday, May 2012
+  - event_date: "2012/06/20"
     location:   demand
     open_call:  1
     presentations:
+      - presenter : spazm
+        title     : YAPCna notes
+        abstract  : Notes and discussion from YAPCna, June 13-15 in Madison, WI.
       - presenter : you
         title     : TBD
         abstract  : Informal discussion of tools, comings and goings, etc.
       - presenter : btilly
-        title     : Template::ExpandHash (likely postponed)
+        title     : Template::ExpandHash (<i>semi-confirmed</i>)
         abstract  : A new perl module to expand a hash as a template.
         links     :
           - name  : Template::ExpandHash
@@ -68,7 +70,18 @@ meetings:
           - name  : git
             url   : https://github.com/btilly/Template-ExpandHash
 #       - presenter : merlyn
-#         title     : Testing Classes with Test::Trap (unconfirmed)
+#         title     : Testing Classes with Test::Trap (<i>unconfirmed</i>)
+  - event_date: "2012/05/23"
+    #ds_std:     TBD: Third or Fourth, Wednesday or Thursday, May 2012
+    location:   demand
+    open_call:  1
+    presentations:
+      - presenter : theron
+        title     : perlTK
+        abstract  : demo of a Chinese language-tutor application in perlTK.
+      - presenter : spazm
+        title     : DotCloud demo
+        abstract  : live demo of dotcloud platform.  Trivial push of dancer and mojolicious apps to the cloud.
   - event_date: "2012/03/21"
     location: demand
     open_call: 0
@@ -443,6 +456,9 @@ presenter:
     name: Ben Tilly
     cpan: tilly
     github: btilly
+  theron:
+    name: Theron Stanford
+    url: http://www.linkedin.com/pub/theron-stanford/3/b53/5a9
   you:
     description: are an awesome perler!
     name: You
