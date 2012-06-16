@@ -31,9 +31,15 @@ sub validate_args
 {
     my ( $self, $opt, $args ) = @_;
     die $self->_usage_text if $opt->{help};
+    $self->validate_config( $opt, $args );
+    $self->validate( $opt, $args );
+}
+
+sub validate_config
+{
+    my ( $self, $opt, $args ) = @_;
     $self->{config} = Config::YAML->new( config => $opt->{config_file} )
         or die $self->usage_error("failed to open configuration file: $!");
-    $self->validate( $opt, $args );
 }
 
 sub meetings
