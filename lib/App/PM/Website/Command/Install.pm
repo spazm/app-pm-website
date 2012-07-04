@@ -14,7 +14,10 @@ sub options
     my ($class, $app) = @_;
     return (
         [ 'url=s'         => 'path to webdav directory' ],
-        [ 'filename=s'    => 'upload name, rather than index.html' , {default => 'index.html' }],
+        [ 'build-dir=s'   => 'path to local rendered files' ,
+            { default => 'website' }],
+        [ 'filename=s'    => 'upload name, rather than index.html' ,
+            {default => 'index.html'}],
         [ 'username=s'    => 'username for webdav, override .netrc' ],
         [ 'password=s'    => 'password for webdav, override .netrc' ],
         [ 'certificate=s' => 'path to ca certificate' ],
@@ -31,13 +34,13 @@ sub validate
 
     if(@$args)
     {
-        die $self->usage_error("no arguments allowed") 
+        die $self->usage_error("no arguments allowed")
     }
 }
 sub validate_certificate
 {
     my ($self, $opt) = @_;
-    my $c = $self->{config}->{config};
+    my $c = $self->{config}{config}{website};
     $opt->{certificate} ||= $c->{certificate};
 
     if ($opt->{certificate} && ! -f $opt->{certificate} )
@@ -51,7 +54,7 @@ sub validate_certificate
 sub validate_url
 {
     my ($self, $opt ) = @_;
-    my $c = $self->{config}->{config};
+    my $c = $self->{config}{config}{website};
 
     $opt->{url} ||= $c->{url};
     die $self->usage_error( "url must be defined on command line or in config file") 
@@ -61,7 +64,7 @@ sub validate_login
 {
     my ( $self, $opt ) = @_;
 
-    my $c       = $self->{config}->{config};
+    my $c       = $self->{config}{config}{website};
     my $url     = $opt->{url};
     my $machine = $opt->{machine} || $c->{machine};
 
@@ -73,11 +76,11 @@ sub validate_login
     if( $machine  )
     {
         my $mach = Net::Netrc->lookup($machine);
-        if ( defined $mach ) 
+        if ( defined $mach )
         {
             $opt->{username} ||= $mach->login();
             $opt->{password} ||= $mach->password();
-        } 
+        }
         else
         {
             warn "machine '$machine' not found in .netrc"
@@ -122,15 +125,17 @@ sub execute
         $opt->{url}, $webdav->message() );
 
     my %put_options = (
-        -local => "website/$opt->{filename}",
+        -local => "$opt->{build_dir}/$opt->{filename}",
         -url   => $opt->{url},
     );
     print Dumper { put_options => \%put_options };
     my $success = $opt->{dry_run} ? 1 : $webdav->put(%put_options);
 
-    die sprintf( "failed to put file website/%s to url %s : %s\n",
-        $opt->{filename}, $opt->{url}, $webdav->message(), )
-        unless $success;
+    die sprintf(
+        "failed to put file %s/%s to url %s : %s\n",
+        $opt->{build_dir}, $opt->{filename},
+        $opt->{url},       $webdav->message(),
+    ) unless $success;
 
     return $success;
 }

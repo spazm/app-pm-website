@@ -28,6 +28,7 @@ sub options
 sub validate
 {
     my ($self, $opt, $args ) = @_;
+    $self->validate_required_dir($opt,'build_dir');
 
     die $self->usage_error( "no arguments allowed") if @$args;
 
@@ -63,10 +64,13 @@ sub _create_config_file
     my $yaml      = <<"EOYAML";
 ---
 config:
-  certificate: cacert.pem
-  machine: groups.pm.org
-  url: https://groups.pm.org/groups/$groupname/
-  username: $username
+  website:
+    certificate: cacert.pem
+    machine: groups.pm.org
+    url: https://groups.pm.org/groups/$groupname/
+    username: $username
+    template_dir:
+    build_dir:
 location:
   default:
     address:

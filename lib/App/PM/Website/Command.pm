@@ -35,6 +35,45 @@ sub validate_args
     $self->validate( $opt, $args );
 }
 
+sub validate_required_dir
+{
+    my ($self, $opt, $dir) = @_;
+    my $c = $self->{config}{config}{website};
+    $opt->{$dir} ||= $c->{$dir};
+    die $self->usage_error("$dir is required")
+        if !$opt->{$dir};
+
+    die $self->usage_error(
+        "$dir does not exist: $opt->{$dir}")
+        if !-d $opt->{$dir};
+
+    return 1
+}
+sub validate_or_create_dir
+{
+    my ($self, $opt, $dir) = @_;
+    my $c = $self->{config}{config}{website};
+    $opt->{$dir} ||= $c->{$dir};
+
+    die $self->usage_error("$dir is required")
+        if !$opt->{$dir};
+
+    if ( ! -d $opt->{$dir} )
+    {
+        print "creating build dir: $opt->{$dir}\n"
+            if $opt->{verbose};
+        if ( !$opt->{dry_run} )
+        {
+            mkdir( $opt->{$dir} )
+                or die $self->usage_error(
+                "failed to make output directory $opt->{$dir} : $!");
+        }
+    }
+
+    return 1
+}
+
+
 sub validate_config
 {
     my ( $self, $opt, $args ) = @_;

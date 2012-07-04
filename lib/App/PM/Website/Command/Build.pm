@@ -13,11 +13,12 @@ sub options
 {
     my ($class, $app) = @_;
 
-    #TODO: make this a config
     return (
+        [ 'template_dir=s' => 'template dir path',
+            { default => "template" } ],
         [ 'build_dir=s' => 'build dir path',
             { default => "./website" } ],
-        [   'date=s' => 'which month to build',
+        [ 'date=s' => 'which month to build',
             { default => scalar $class->today() } ],
     );
 }
@@ -25,6 +26,8 @@ sub options
 sub validate
 {
     my ($self, $opt, $args ) = @_;
+    $self->validate_or_create_dir($opt,'build_dir');
+    $self->validate_required_dir($opt, 'template_dir');
 
     die $self->usage_error( "no arguments allowed") if @$args;
 
@@ -36,7 +39,8 @@ sub execute
     my( $self, $opt, $args ) = @_;
 
     my ($meeting, @past_meetings) = $self->meetings();
-    my $loc = $meeting->{location} || 'demand';
+    my $loc = $meeting->{location} ||
+        $self->{config}{config}{location}{default};
     my $tt_vars = {
         m         => $meeting,
         meetings  => \@past_meetings,
@@ -45,12 +49,11 @@ sub execute
         l         => $self->{config}->get_location->{$loc},
     };
     my $execute_options = {
-        template_file => "template/index.tt",
-        tt_vars => $tt_vars,
-        output_file => "$opt->{build_dir}/index.html",
+        template_file => "$opt->{template_dir}/index.tt",
+        output_file   => "$opt->{build_dir}/index.html",
+        tt_vars       => $tt_vars,
     };
     $self->execute_template( $opt, $execute_options );
-
 }
 
 sub execute_template
@@ -65,10 +68,7 @@ sub execute_template
         || die "$Template::ERROR\n";
 
     my @opts = (
-        @$tt_options{
-            qw(
-                template_file tt_vars output_file )
-            },
+        @$tt_options{ qw( template_file tt_vars output_file ) },
         ( binmode => ':utf8' )
     );
 
@@ -85,4 +85,6 @@ sub execute_template
 
     return $success;
 }
+
+
 1;
