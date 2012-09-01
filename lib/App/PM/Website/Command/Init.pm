@@ -5,7 +5,7 @@ package App::PM::Website::Command::Init;
 use base 'App::PM::Website::Command';
 use YAML::Any;
 use File::Spec;
-use File::Path qw(make_path);
+use File::Path 2.07 qw(make_path);
 use Data::Dumper;
 
 #ABSTRACT: create skeleton config/pm-website.yaml
@@ -40,6 +40,7 @@ sub _create_config_dir
     my ( $self, $opt, $config_file) = @_;
     # get path from $config_file, check that path exists as directory
     {
+#TODO: use File::Basename, File::Dirname
         my ( $volume, $directories, $file )
             = File::Spec->splitpath($config_file);
         my $config_dir = File::Spec->catpath( $volume, $directories );

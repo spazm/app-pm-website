@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
-package main;
-#ABSTRACT: command line front end to App::PM::Website
+# PODNAME: pm-website
+# ABSTRACT: command line front end to App::PM::Website
 
 use warnings;
 use strict;
