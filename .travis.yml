@@ -1,6 +1,7 @@
 language: perl
-before_install:
-  - cpanm Dist::Zilla
-  - dzil authordeps | cpanm
-  - dzil listdeps | cpanm
-script: "dzil test"
+install:
+   - cpanm --quiet --notest --skip-satisfied Dist::Zilla
+   - dzil authordeps | cpanm --quiet --notest --skip-satisfied
+   - dzil listdeps | cpanm --verbose
+script:
+   - dzil test
