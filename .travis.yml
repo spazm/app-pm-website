@@ -1,4 +1,7 @@
 language: perl
+perl:
+   - "5.16"
+   - "5.14"
 install:
    - cpanm --quiet --notest --skip-satisfied Dist::Zilla
    - dzil authordeps | cpanm --quiet --notest --skip-satisfied
