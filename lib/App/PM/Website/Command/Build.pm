@@ -14,9 +14,9 @@ sub options
     my ($class, $app) = @_;
 
     return (
-        [ 'template_dir=s' => 'template dir path',
+        [ 'template-dir=s' => 'template dir path',
             { default => "template" } ],
-        [ 'build_dir=s' => 'build dir path',
+        [ 'build-dir=s' => 'build dir path',
             { default => "./website" } ],
         [ 'date=s' => 'which month to build',
             { default => scalar $class->today() } ],

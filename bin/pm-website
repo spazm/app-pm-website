@@ -3,7 +3,14 @@
 # PODNAME: pm-website
 # ABSTRACT: command line front end to App::PM::Website
 
+
 use warnings;
 use strict;
 use App::PM::Website;
 App::PM::Website->run();
+
+__END__
+
+=head1 SYNOPSIS
+
+See L<App::PM::Website> for documentation

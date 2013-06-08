@@ -28,8 +28,6 @@ sub options
 sub validate
 {
     my ($self, $opt, $args ) = @_;
-    $self->validate_required_dir($opt,'build_dir');
-
     die $self->usage_error( "no arguments allowed") if @$args;
 
     return 1;
