@@ -64,8 +64,8 @@ Initialize a configuration yaml file with the necessary keys
 
 Builds the index file (F<website/index.html>) by rendering the
 template (F<template/index.in>) with TemplateToolkit. The template
-is passed a models describing the next meeting, past meetings, presenters
-and locations.
+is passed models describing the next meeting and location, past
+meetings, presenters and locations. See L</Model>.
 
 =item C<pm-website install>
 
