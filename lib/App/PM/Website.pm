@@ -143,17 +143,9 @@ hash of presenter information keyed by presenter id.
 
 =over
 
-=item L<Template Toolkit>
+=item * L<Template::Toolkit>
 
-=item la.pm.org
-
-=over
-
-=item L<Website|http://la.pm.org>
-
-=item L<Source|https://github.com/spazm/la.pm.org>
-
-=back
+=item * la.pm.org: example L<Website|http://la.pm.org> L<Source|https://github.com/spazm/la.pm.org>
 
 =item L<PM Group Hosting FAQ|http://www.pm.org/faq/hosting_faq.html#www>
 
